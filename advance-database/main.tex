@@ -20,6 +20,8 @@
 
 \tableofcontents
 
+\newpage
+
 \section{مفاهیم}
 
 \subsection{تراکنش}
@@ -92,23 +94,8 @@
     \item \lr{Abort}: تراکنش در نهایت سقط یا صرفه نظر می‌شود
 \end{itemize}
 
-\section{وضعیت تراکنش}
+\subsubsection{وضعیت تراکنش}
 
-\begin{plantuml}
-@startuml
-start
-
-repeat
-  :Initial wait;
-  :Execute;
-  if (Process(loading|wait)) then
-    :Abort;
-  else
-    :Partial commit;
-    :Commit;
-stop
-@enduml
-\end{plantuml}
 
 نکته: \lr{Abort} در دو شرط اتفاق می‌افتد:
 
@@ -117,7 +104,16 @@ stop
     \item خرابی و نقص سیستم که روی اجرای تراکنش تاثیر می‌گذارد که کامل نشود
 \end{enumerate}
 
-\section{همروندی}
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{umls/transactionStatus.png}
+    \caption{نمودار شروع فرایند تراکنش‌ها}
+    \label{fig: uml}
+\end{figure}
+
+\newpage
+
+\subsection{همروندی}
 
 \subsection{مزیت همروندی}
 
@@ -137,11 +133,11 @@ stop
     before Write}
 \end{enumerate}
 
-\section{زمانبندی}
+\subsection{زمان‌بندی}
 
-زمانبندی به اجرای همروند و همزمان چندین تراکنش با هم گفته می‌شود.
+زمان‌بندی به اجرای همروند و همزمان چندین تراکنش با هم گفته می‌شود.
 
-\section{نظریه پی در پی پذیری زمانبندی‌ها}
+\subsection{نظریه پی در پی پذیری زمان‌بندی‌ها}
 
 به دو روش می‌توان به پی در پی پذیری رسید:
 
@@ -161,7 +157,9 @@ stop
     \item $E_{i}| Q |$
 \end{itemize}
 
-\section{سه شرط اصلی تصادم}
+\subsection{سه شرط اصلی تصادم}
+
+اگر $p_{i}$ و $q_{j}$ دو تراکنش باشند:
 
 \begin{enumerate}
     \item \lr{i != j}
@@ -169,7 +167,23 @@ stop
     \item حداقل یکی از دستورات عمل نوشتن یا \lr{write} داشته باشد
 \end{enumerate}
 
-\section{زمان‌بندی سریالی}
+
+\begin{LTR}
+    \begin{table}[h]
+        \centering
+        \begin{RTL}
+            \caption{حالات تصادم}
+        \end{RTL}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            & $R_{i}(Q)$ & $W_{j}(Q)$ \\ \hline
+            $R_{i}(Q)$ & ندارد &  دارد  \\ \hline
+            $W_{j}(Q)$ & دارد & دارد  \\ \hline
+        \end{tabular}
+    \end{table}
+\end{LTR}
+
+\subsection{زمان‌بندی سریالی}
 
 در زمان‌بندی پی در پی، زمانی که یک تراکنش \lr{commit} یا \lr{abort} شود به دنبال
 تراکنش بعدی خواهد رفت که به آن تراکنش سریالی یا \lr{Serializable schedule}
@@ -209,11 +223,75 @@ stop
     \end{table}
 \end{LTR}
 
-\section{زمانبندی‌های معادل در برخورد}
+\subsection{زمان‌بندی‌های معادل در برخورد}
 
-زمانی که دستورات یک زمانبندی را وارد زمانبندی دیگر کنیم به گونه‌ای که باعث تصادم
-و برخورد نشود، این دستورات در این زمانبندی با هم معادل در برخورد هستند.
+زمانی که دستورات یک زمان‌بندی را وارد زمانبندی دیگر کنیم به گونه‌ای که باعث تصادم
+و برخورد نشود، این دستورات در این زمان‌بندی با هم معادل در برخورد هستند.
+
+با توجه به تراکنش‌های \lr{$t_{1}$} و \lr{$t_{2}$} و \lr{$t_{3}$} و \lr{$t_{4}$}
+زیر، می‌توان دریافت که این دو تراکنش با یکدیگر معادل در برخورد هستند. به گونه‌ای
+که بعد از برخورد هیچ تصادمی رخ نداده است.
+
+\begin{LTR}
+    \begin{table}[h]
+        \centering
+        \begin{RTL}
+            \caption{تراکنش‌های معادل در برخورد اول}
+        \end{RTL}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            $T_{1}$ & $R(Q)$ & $W(Q)$ & & $R(P)$ & & $W(P)$ & $C$ & & & \\ \hline
+            $T_{2}$ & & & $R(Q)$ & & $W(Q)$ & &  & $K(Q)$ & $W(Q)$ & $C$ \\ \hline
+        \end{tabular}
+    \end{table}
+\end{LTR}
+
+\begin{LTR}
+    \begin{table}[h]
+        \centering
+        \begin{RTL}
+            \caption{تراکنش‌های معادل در برخورد دوم}
+        \end{RTL}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            $T_{3}$ & $R(Q)$ & $W(Q)$ & & $R(P)$ & & $W(P)$ & $C$ & & & \\ \hline
+            $T_{4}$ & & & $R(Q)$ & & $W(Q)$ & &  & $K(Q)$ & $W(Q)$ & $C$ \\ \hline
+        \end{tabular}
+    \end{table}
+\end{LTR}
+
+\newpage
+
+اما در مثال بعد هر دو تراکنش \lr{$t_{1}$} و \lr{$t_{2}$} مستعد به برخورد در یکی
+از فرایند‌ها در زمان هستند.
+
+\begin{LTR}
+    \begin{table}[h]
+        \centering
+        \begin{RTL}
+            \caption{تراکنش‌های معادل در برخورد اول}
+        \end{RTL}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            $T_{1}$ & $R(Q)$ & $W(Q)$ & & $R(P)$ & & $W(P)$ & $C$ & & & \\ \hline
+            $T_{2}$ & & & $R(Q)$ & & $W(Q)$ & &  & $K(Q)$ & $W(Q)$ & $C$ \\ \hline
+        \end{tabular}
+    \end{table}
+\end{LTR}
 
 
+\begin{LTR}
+    \begin{table}[h]
+        \centering
+        \begin{RTL}
+            \caption{تراکنش‌های معادل در برخورد اول}
+        \end{RTL}
+        \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|}
+            \hline
+            $T_{1}$ & $R(Q)$ & $W(Q)$ & & $R(P)$ & & $W(P)$ & $C$ & & & \\ \hline
+            $T_{2}$ & & $R(Q)$ & $R(Q)$ & & $W(Q)$ & &  & $K(Q)$ & $W(Q)$ & $C$ \\ \hline
+        \end{tabular}
+    \end{table}
+\end{LTR}
 
 \end{document}

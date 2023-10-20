@@ -1,0 +1,14 @@
+@startuml transactionStatus
+!theme sandstone
+
+start
+repeat
+  :Initial wait;
+  :Execute;
+  if (Process(loading|wait)) then
+    :Abort;
+  else
+    :Partial commit;
+    :Commit;
+stop
+@enduml
