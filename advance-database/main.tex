@@ -2,9 +2,8 @@
 \documentclass[20pt, a4paper]{article}
 \usepackage{listings}
 \usepackage{hyperref}
-\usepackage{tikz}
+\usepackage{plantuml}
 \usetikzlibrary{arrows, shapes, automata, petri, positioning, calc}
-% Justify paragraphs
 \usepackage{graphicx}
 \usepackage{ragged2e}
 \usepackage{color}
@@ -95,6 +94,22 @@
 
 \section{وضعیت تراکنش}
 
+\begin{plantuml}
+@startuml
+start
+
+repeat
+  :Initial wait;
+  :Execute;
+  if (Process(loading|wait)) then
+    :Abort;
+  else
+    :Partial commit;
+    :Commit;
+stop
+@enduml
+\end{plantuml}
+
 نکته: \lr{Abort} در دو شرط اتفاق می‌افتد:
 
 \begin{enumerate}
@@ -154,13 +169,51 @@
     \item حداقل یکی از دستورات عمل نوشتن یا \lr{write} داشته باشد
 \end{enumerate}
 
-در زمانبندی پی در پی، زمانی که یک تراکنش \lr{Commit} شود به دنبال تراکنش بعدی
-خواهد رفت که به آن \lr{Serializable schedule} گویند.
+\section{زمان‌بندی سریالی}
+
+در زمان‌بندی پی در پی، زمانی که یک تراکنش \lr{commit} یا \lr{abort} شود به دنبال
+تراکنش بعدی خواهد رفت که به آن تراکنش سریالی یا \lr{Serializable schedule}
+می‌گویند.
+
+\begin{LTR}
+  \lr{$S_{1} = R_{1}(A) W_{1}(A) a_{1} W_{2}(A) W_{2}(B) C_{2}$}
+\end{LTR}
+
+زمان‌بندی سریالی بالا در حقیقت به دو فرایند تقسیم می‌شود. چرا که در انتهای
+تراکنش اول پیام سقوط کرده و برنامه به دنبال فرایند بعدی رفته است که روی منبع
+دیگری در حال انجام پردازش است.
+
+فرایند نافرجام اول:
+
+\begin{LTR}
+  \lr{$S_{1} = R_{1}(A) W_{1}(A) a_{1}$}
+\end{LTR}
+
+فرایند \lr{commit} شده دوم:
+
+\begin{LTR}
+  \lr{$S_{1} = W_{2}(A) W_{2}(B) C_{2}$}
+\end{LTR}
+
+\begin{LTR}
+    \begin{table}[h]
+        \centering
+        \begin{RTL}
+            \caption{تراکنش‌های سریالی پی در پی}
+        \end{RTL}
+        \begin{tabular}{|c|c|c|c|c|c|c|}
+            \hline
+            $T_{1}$ & $R_{1}(A)$ & $W_{1}(A)$ & $a_{1}$ & & & \\ \hline
+            $T_{2}$ & & & & $W_{2}(A)$ & $W_{2}(B)$ & $C_{2}$ \\ \hline
+        \end{tabular}
+    \end{table}
+\end{LTR}
 
 \section{زمانبندی‌های معادل در برخورد}
 
 زمانی که دستورات یک زمانبندی را وارد زمانبندی دیگر کنیم به گونه‌ای که باعث تصادم
 و برخورد نشود، این دستورات در این زمانبندی با هم معادل در برخورد هستند.
+
 
 
 \end{document}
