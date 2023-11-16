@@ -1,0 +1,57 @@
+\documentclass[a4paper]{article}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{plantuml}
+\usetikzlibrary{arrows, shapes, automata, petri, positioning, calc}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{color}
+\usepackage{xepersian}
+\usepackage{subfiles}
+\settextfont[Scale=1]{XB Roya}
+\renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+\centerline{پایگاه داده پیشرفته تمرین دوم}
+\centerline{دکتر شجاعی مهر}
+\centerline{علیرضا سلطانی نشان}
+\centerline{\today}
+
+\section{سوال اول}
+
+براساس گراف سابقه ترسیم شده، برای یک زمانبندی، آیا این زمانبندی پی در پی پذیر در
+برخورد است یا خیر؟ پاسخ خود را توضیح دهید
+
+برای پی در پی پذیر در برخورد می‌باشد:
+
+\begin{LTR}
+    \begin{table}[h]
+        \centering
+        \begin{RTL}
+            \caption{نمونه‌ای از فرایند ACA}
+        \end{RTL}
+        \scalebox{0.7}{
+            \begin{tabular}{c|c|c|c|c|c|c|c|c}
+                $T_{1}$ & & & & & & & & \\
+                $T_{2}$ & & & & & & & & \\
+                $T_{3}$ & & & & & & & & \\
+                $T_{4}$ & & & & & & & & \\
+                $T_{5}$ & & & & & & & & \\
+            \end{tabular}
+        }
+    \end{table}
+\end{LTR}
+
+
+\section{سوال دوم}
+
+برای هر یک از سطوح انزوای زیر یک مثال از زمانبندی ارائه دهید، که در آن Isolation
+باشد اما پی در پی پذیر در برخورد نباشد.
+
+\begin{enumerate}
+    \item \lr{Read uncommitted}
+    \item \lr{Read commited}
+    \item \lr{Repeatable read}
+\end{enumerate}
+
+\end{document}
