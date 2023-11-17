@@ -1,4 +1,5 @@
 \documentclass[a4paper]{article}
+\usepackage{geometry}
 \usepackage{listings}
 \usepackage{hyperref}
 \usepackage{plantuml}
@@ -8,6 +9,7 @@
 \usepackage{color}
 \usepackage{xepersian}
 \usepackage{subfiles}
+\newgeometry{left=2cm, right=2cm, bottom=2cm}
 \settextfont[Scale=1]{XB Roya}
 \renewcommand{\baselinestretch}{1.5}
 
@@ -22,25 +24,9 @@
 براساس گراف سابقه ترسیم شده، برای یک زمانبندی، آیا این زمانبندی پی در پی پذیر در
 برخورد است یا خیر؟ پاسخ خود را توضیح دهید
 
-برای پی در پی پذیر در برخورد می‌باشد:
-
-\begin{LTR}
-    \begin{table}[h]
-        \centering
-        \begin{RTL}
-            \caption{نمونه‌ای از فرایند ACA}
-        \end{RTL}
-        \scalebox{0.7}{
-            \begin{tabular}{c|c|c|c|c|c|c|c|c}
-                $T_{1}$ & & & & & & & & \\
-                $T_{2}$ & & & & & & & & \\
-                $T_{3}$ & & & & & & & & \\
-                $T_{4}$ & & & & & & & & \\
-                $T_{5}$ & & & & & & & & \\
-            \end{tabular}
-        }
-    \end{table}
-\end{LTR}
+بله پی در پی پذیر در برخورد می‌باشد زیرا هیچ گونه حلقه‌ای بین تراکنش‌ها وجود
+ندارد. همانطور که قبلا مفصل توضیح داده شد با وجود یک حالت ناسازگار و زمانی که
+بین دو تراکنش حلقه‌ به وجود آید آن تراکنش پی در پی پذیر در برخورد نیست.
 
 
 \section{سوال دوم}
@@ -52,6 +38,98 @@
     \item \lr{Read uncommitted}
     \item \lr{Read commited}
     \item \lr{Repeatable read}
+\end{enumerate}
+
+
+\subsection{\lr{Read uncommitted}}
+
+در این روش تراکنش $T_{j}$ مقداری را میخواند که در ابتدا کامیت شده است. در صورتی
+که در تراکنش $T_{i}$ مقدار جدیدی نوشته شود ولی آن تراکنش کامیت نشده باشد دائما
+مقدار قبلی خوانده می‌شود تا زمانی که تراکنش $T_{i}$ مقدار جدید خود را کامیت کند.
+
+\begin{LTR}
+    \begin{table}[h]
+        \centering
+        \scalebox{0.9}{
+            \begin{tabular}{c|c}
+                $T_{i}$ & $T_{j}$ \\ \hline
+                W(A) &  \\
+                 &  \\
+                 & R(A)  \\
+                W(A) &  \\
+                W(A) &  \\
+                 & R(A)  \\
+            \end{tabular}
+        }
+    \end{table}
+\end{LTR}
+
+برای مثال اگه تراکنشی مقدار ۵ را خوانده باشد، در اولین تراکنش که نوشتن روی منبع
+(A) وجود دارد هیچ کامیتی صورت نگرفته پس در تراکنش بعدی مقدار قبلی یعنی ۵ خوانده
+می‌شود. بعد از دو بار نوشتن مجدد اما چون هیچ کامیتی صورت نگرفته بازم مقدار ۵
+خوانده خواهد شد. با وجود حلقه در این مثال می‌توان گفت که این مثال در حالت انزوا
+تعریف شده اما پی در پی پذیر در برخورد نیست.
+
+\newpage
+
+\subsection{\lr{Read commited}}
+
+\begin{LTR}
+    \begin{table}[h]
+        \centering
+        \scalebox{0.9}{
+            \begin{tabular}{c|c|c|c|c|c|c}
+                $T_{i}$ & W(A) &  & W(Q) & W(Q) C & & R(F)\\ \hline
+                $T_{j}$ & & R(A) & & R(Q) & W(F) C & \\
+            \end{tabular}
+        }
+    \end{table}
+\end{LTR}
+
+در این روش انزوا وجود دارد چرا که به صورت همزمان میتواند هر دو تراکنش انجام شوند
+و به مقادیر یک دیگر دسترسی داشته باشند. اما در ادامه اگر گراف آنها ترسیم شود در
+هنگام خواند منبع (F) امکان ایجاد یک حلقه بین دو تراکنش وجود خواهد داشت.
+
+\subsection{\lr{Repeatable read}}
+
+در این روش دو حالت وجود دارد:
+
+\begin{enumerate}
+    \item  آیا در حال خواندن مقدار به صورت تکرار پذیر در یک خط تراکنشی هستیم که
+    در تراکنش مقابل آن کامیتی صورت گرفته است؟
+    \begin{LTR}
+        \begin{table}[h]
+            \centering
+            \scalebox{0.9}{
+                \begin{tabular}{c|c}
+                    $T_{i}$ & $T_{j}$ \\ \hline
+                    W(A) & R(A)  \\
+                     C & R(A)  \\
+                     & R(A)  \\
+                    W(A) & R(A)  \\
+                    C & R(A)  \\
+                \end{tabular}
+            }
+        \end{table}
+    \end{LTR}
+
+    \item هیچ کامیتی صورت نگرفته و تراکنش مقدار قبلی خود را به صورت دائمی در حال
+    خواندن می‌باشد.
+    \begin{LTR}
+        \begin{table}[h]
+            \centering
+            \scalebox{0.9}{
+                \begin{tabular}{c|c}
+                    $T_{i}$ & $T_{j}$ \\ \hline
+                    W(A) & R(A)  \\
+                    & R(A)  \\
+                    & R(A)  \\
+                    W(A) & R(A)  \\
+                    & R(A)  \\
+                \end{tabular}
+            }
+        \end{table}
+    \end{LTR}
 \end{enumerate}
 
 \end{document}
