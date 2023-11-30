@@ -11,6 +11,31 @@
 \settextfont[Scale=1]{XB Roya}
 \usepackage{multirow}
 \renewcommand{\baselinestretch}{1.5}
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+% Code style configuration
+\lstset{frame=tb,
+  language=python,
+  aboveskip=1mm,
+  lineskip=0.9mm,
+  belowskip=1mm,
+  showstringspaces=false,
+  showspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  numberstyle=\small\color{black},
+  numbers=left,
+  stepnumber=1,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
 
 \begin{document}
 \centerline{گزارش بررسی پیکربندی نامناسب سرویس‌های NoSQL در اشل پروژه‌های بزرگ
@@ -125,12 +150,12 @@
 دسترسی به دیتابیس، سطوح دسترسی تعریف شده و جداول مرتبط به این دیتابیس‌ها،
 می‌پردازد. 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{res/fig1.png}
-    \caption{بررسی عملکرد ابزار توسعه داده شده}
-    \label{fig: diagram}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=1\textwidth]{res/fig1.png}
+%     \caption{بررسی عملکرد ابزار توسعه داده شده}
+%     \label{fig: diagram}
+% \end{figure}
 
 \subsubsection{تشخیص عمل خواندن از دیتابیس‌های فاش شده}
 
@@ -421,8 +446,61 @@ Cloud}, \lr{Google Cloud}) محققان توانستند به subnet آدرس پ
     \end{table}
 \end{LTR}
 
+\newpage
 
 \section{آزمایش‌ها و تحلیل نتایج}
+
+در‌ این قسمت به نحوه عملکرد کلی فریمورک توسعه داده شده توسط محققان می‌پردازیم.
+همان طور که بالاتر بارها اشاره شد، این فریمورک طی تمام آزمایشات محققان اصلا
+ماهیت داده‌های دیتابیس و محتوای آنها را مورد بررسی قرار نداده بلکه تماما روی
+دسترسی در استفاده از داده‌ها تاکید زیاد داشتند.
+
+در این بخش با نمایش یک نمونه کد، به طور کلی در مورد نحوه عملکرد این فریمورک صحبت
+خواهیم کرد.
+
+\begin{LTR}
+    \begin{lstlisting}
+        # Connect to the database
+        mongo_client.connect(ip_address)
+        # Get database names
+        db_names = list_database_name()
+        # Mongo-shell method used to get role mappings
+        db.getRoles(showBuiltinRoles: false)
+        # Get collection names
+        collections = list_collection_names()
+        # Map-reduce function used to get field-mapping for each table
+        map = Code("function() {
+            for (key in this) {
+                emit(key, None);
+            }
+        }")
+        reduce = Code("function(key, stuff) { return null; }")
+        results = collection.map_reduce(map, reduce, "myresults")
+        # Query methods for field and object detection
+        count({ fieldname: {"$exists": True} })
+        count({ fieldname: {r'.*\.(fieldvalue)'} })
+        # Write the message in a new database
+        writedb = mongo_client[MONGO_DB]
+        writecollection = writedb[MONGO_COLLECTION]
+        writecollection.insert_one(MONGO_DOC)
+    \end{lstlisting}
+\end{LTR}
+
+\subsection{بررسی قسمتی از فرایند مطرح شده}
+
+در خط ۲ با استفاده از آدرس IP حاضر در لیست آدرس‌ها، قصد اتصال به دیتابیس مانگو
+را به صورت ریموت داریم. سپس بعد از اتصال موفق می‌توانیم با استفاده از واسط
+\lr{Mongo Shell} دستوراتی را برای انجام عملیاتی روی دیتابیس مورد نظر انجام داد.
+برای مثال در خط بعدی آن نام تمام دیتابیس‌هایی که در این آدرس IP وجود دارد را
+دریافت می‌کنیم و در متغیر dbnames قرار می‌دهیم. با استفاده از این عمل یعنی
+عاملی که توانسته به دیتابیس متصل شود قادر به خواندن محتوا بوده است که در این جا
+با اطمینان اعلام می‌کنیم که دسترسی خواندن در این دیتابیس برای یک کاربر عادی و
+خارج از سیستم وجود دارد. بعد از آن با استفاده از متد \lr{getRoles} می‌توانیم
+تمام کاربرانی که در این دیتابیس تعریف شده‌اند براساس سطح دسترسی آنها، را دریافت
+کنیم. برای دسترسی به جداول (اصطلاحا در دیتابیس‌های مانگو به آن کالکشن می‌گویند.)
+از تابع که نوشته‌ایم استفاده کردیم تا لیست تمام کالکشن‌های مروبط به یک دیتابیس
+را دریافت کنیم.
+
 
 \section{نوآوری‌های تحقیق}
 
