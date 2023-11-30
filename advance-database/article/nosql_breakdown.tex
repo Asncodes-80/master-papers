@@ -150,12 +150,12 @@
 دسترسی به دیتابیس، سطوح دسترسی تعریف شده و جداول مرتبط به این دیتابیس‌ها،
 می‌پردازد. 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\textwidth]{res/fig1.png}
-    \caption{بررسی عملکرد ابزار توسعه داده شده}
-    \label{fig: diagram}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=1\textwidth]{res/fig1.png}
+%     \caption{بررسی عملکرد ابزار توسعه داده شده}
+%     \label{fig: diagram}
+% \end{figure}
 
 \subsubsection{تشخیص عمل خواندن از دیتابیس‌های فاش شده}
 
@@ -450,7 +450,7 @@ Cloud}, \lr{Google Cloud}) محققان توانستند به subnet آدرس پ
 
 \newpage
 
-\section{آزمایش‌ها و تحلیل نتایج}
+\section{آزمایش‌ها}
 
 در‌ این قسمت به نحوه عملکرد کلی فریمورک توسعه داده شده توسط محققان می‌پردازیم.
 همان طور که بالاتر بارها اشاره شد، این فریمورک طی تمام آزمایش‌ها، محققان اصلا
@@ -562,6 +562,26 @@ Cloud}, \lr{Google Cloud}) محققان توانستند به subnet آدرس پ
         # Write the warning message
         r.append(key, value)
     \end{lstlisting}
+\end{LTR}
+
+\section{تحلیل نتایج}
+
+\begin{LTR}
+    \begin{table}[h]
+        \centering
+        \begin{RTL}
+            تعداد سرویس‌های افشا شده NoSQL
+        \end{RTL}
+        \scalebox{0.7}{
+            \begin{tabular}{|c|cccc|c|}
+                \hline
+                Misconfiguration & MongoDB & Elasticsearch & Redis & Cassandra & TotalNo. \\ \hline
+                Read & 4,859 & 4,735 & 1,532(2,029) & 663 & 12,276 \\
+                Read Only & 272 & 205 & 362 & 225 & 1,064 \\
+                Read \& Write & 4,587 & 4,520 & 1,170 & 438 & 10,715 \\ \hline
+            \end{tabular}
+        }
+    \end{table}
 \end{LTR}
 
 \section{نوآوری‌های تحقیق}
