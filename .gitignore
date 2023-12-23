@@ -13,6 +13,8 @@
 *.cb2
 .*.lb
 
+payanname
+
 ## Intermediate documents:
 *.dvi
 *.xdv
