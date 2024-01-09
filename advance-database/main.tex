@@ -14,6 +14,32 @@
 \settextfont[Scale=1]{XB Roya}
 \renewcommand{\baselinestretch}{1.5}
 
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{commentColor}{rgb}{0.6,0.6,0.60}
+% Code style configuration
+\lstset{frame=tb,
+  language=python,
+  aboveskip=1mm,
+  lineskip=0.9mm,
+  belowskip=1mm,
+  showstringspaces=false,
+  showspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  keywordstyle=\color{mauve},
+  commentstyle=\color{commentColor},
+  stringstyle=\color{dkgreen},
+  numberstyle=\small\color{black},
+  numbers=left,
+  stepnumber=1,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
 \begin{document}
 \centerline{پایگاه داده پیشرفته}
 \centerline{دکتر شجاعی مهر}
@@ -21,11 +47,11 @@
 \centerline{\today}
 \tableofcontents
 \newpage
-\include{acid}
-\include{concurrency}
-\include{recoverability}
-\include{concurrency_control}
-\include{timestamp_protocol}
-\include{deadlock}
-\include{recoverable_strategies}
+\input{acid}
+\input{concurrency}
+\input{recoverability}
+\input{concurrency_control}
+\input{timestamp_protocol}
+\input{deadlock}
+\input{recoverable_strategies}
 \end{document}
