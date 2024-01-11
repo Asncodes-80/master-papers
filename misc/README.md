@@ -16,6 +16,8 @@
 برای یادگیری می‌توانید به مخازن زیر مراجعه کنید که براساس تجربه توسعه‌دهندگان
 نوشته شده‌اند:
 
-- Tricks at [laTEX](https://github.com/Wookai/paper-tips-and-tricks)
-- [Best](https://github.com/ahmadassaf/PhD/blob/master/LaTEX%20Best%20Practices.md)
-  practices from PHD student
+- ترفند‌های لاتک برای دوره جهت شروع نوشتن در این مخزن
+[لینک](https://github.com/Wookai/paper-tips-and-tricks)
+- [تمرین](https://github.com/ahmadassaf/PhD/blob/master/LaTEX%20Best%20Practices.md)
+جهت نوشتن یک برگه مربوط به رساله دکتری با لاتک
+  
