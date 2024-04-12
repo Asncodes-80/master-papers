@@ -335,48 +335,239 @@
 
 \subsubsection*{روش‌های انتقال و سازگاری یا \lr{Transpose}}
 
-انتقال به سه روش انجام می‌شود چرا که اهمیت بسیار بالایی دارد و مقداری سطج
+انتقال به سه روش انجام می‌شود چرا که اهمیت بسیار بالایی دارد و مقداری سطح
 پیچیدگی متفاوتی نسبت به بقیه مراحل دارد:
 
 \begin{enumerate}
-    \item 
+    \item \lr{Instantiation} یا نمونه‌سازی: مستقل از دامنه می‌باشد.
+    \item \lr{Specialization} یا خاص‌سازی: دقیقاً در مورد دامنه می‌باشد.
+    \item \lr{Reformulation}: عمل واجب برای بیان فرمول با کلمات سیستمی
 \end{enumerate}
 
-% \subsection{تکنیک‌های جمع‌آوری اطلاعات ذینفع‌گرا}
+در نمونه‌سازی سازمان، تطبیق دادن آن به سیستم کمی دشوار است چرا که یک مفهوم کلی
+را در بالاترین سطح بیان می‌کند که بایستی دانشی در مورد \lr{Business plan}های آن
+داشته باشیم و مدل‌های سازمانی آن یادگرفته شود. زیرا هیچ وقت در مورد دامنه صحبت
+نمی‌کند. برای اینکه خاص دامنه باشد جزئیات بیشتر خواهد بود.
 
-% بیشتر با انسان‌ها ارتباط دارد تا فرآورده‌هایی که در فرایند مهندسی ممکن است تولید
-% شوند یا مورد استفاده قرار گیرند.
+\subsubsection*{نکته}
 
-% \subsubsection{\lr{Interviews}}
+اگر دامنه تغییر کند شرایط و خاص بودن دامنه نمی‌تواند مانند سابق باشد، فلذا الگو
+نیز تغییر می‌کند.
 
-% تمام سوالاتی که برای آن‌ها جوابی نداریم را در بخش \lr{Interview} می‌پرسیم. مثلا
-% بعد از ثبت‌نام کاربر برای او اعلاناتی ارسال شود؟ یا مثلاً می‌گویم که در سناریو
-% تغییر کلاس کاربر اعلانات ارسال شود.
+\subsubsection*{بازیابی اطلاعات دارای دو نوع است}
 
-% در حقیقت برای تمام سوالاتی جوابی نداریم آن‌ها را در بخش \lr{Interview} مطرح
-% می‌کنیم. پرسش‌نامه به تنهایی کامل نیست، بلکه برای کامل شدنش نیاز به مصاحبه دارد.
-% معمولاً بدیهیات در مصاحبه پرسیده نمی‌شود.
+\begin{enumerate}
+    \item مستقل از دامنه یا \lr{Domain independent}
+    \item خاص دامنه یا \lr{Domain specific}
+\end{enumerate}
 
-% \begin{enumerate}
-%     \item ساخت‌یافته: براساس سوال است که پرسیده می‌شود.
-%     \item بدون ساختار: گفت و گو آزاد و بدون هیچ پیش‌درآمدی می‌باشد.
-% \end{enumerate}
+در ابتدا از بالاترین سطح سازمان توضیح می‌دهیم تا بتوانیم به جزئی‌ترین بخش‌های
+دامنه داخل سازمان برسیم. در بالاترین سطح می‌پردازیم که یک خدمت چگونه و به چه
+شکلی ارائه داده شود؟ در پایین‌ترین سطح سازمان که دامنه‌ها و اسکوپ‌های فعالیتی
+آنها می‌باشد می‌پردازیم چه چیزی را قرار است ارائه دهیم؟
 
-% \subsubsection{\lr{Observation and ethnographic studies}}
+\subsubsection*{مستقل از دامنه یا \lr{Domain independent}}
 
-% در مورد مشاهدات صحبت می‌کند که بیشتر سیستم حال حاضر یا \lr{System-as-is} را مورد
-% بررسی قرار می‌دهد. هم \lr{Functional requirements} استخراج می‌شوند و هم
-% \lr{Non-functional requirements}.
+\begin{enumerate}
+    \item توجه به تاکسونومی نیازمندی‌ها
+    \item بازیابی از متا-مدل‌ها
+\end{enumerate}
 
-% این بخش می‌تواند به صورت غیرفعال مانند حالت ناظر باشد یا می‌تواند به صورت فعال
-% به شکل درگیر شدن با فرآیند‌ها که با یادداشت برداری همراه است باشد.
+\subsubsection*{توجه به تاکسونومی}
 
-% \subsubsection{\lr{Group sessions}}
+این روش سلسله موارد نیازمندی‌ها را در نظر گرفته است که به صورت نیازمندی‌های
+غیرعملیاتی یا \lr{Non-functional} باشند. عملیاتی مانند الگوریتم‌های جست و جو و
+پارامتر‌های امنیتی.
 
-% \begin{itemize}
-%     \item ساختار یافته: به هر عضو تیم زمانی داده می‌شود. همه موارد به صورت مشخص
-%     از پیش تعین شده است. کاملاً نقش هر فردی در تیم مشخص می‌باشد.
-%     \item بدون ساختار: مانند لحظات طوفان فکری که می‌تواند به شکل نگارش صورت جلسه
-%     به عنوان نتیجه همفکری‌ها باشد.
-%     \item بدون سانسور شدن و تمسخر می‌باشد.
-% \end{itemize}
+نکته مهم آن است که خاص‌تر شدن تاکسونومی باعث جست و جوی متمرکز‌تر خواهد شد.
+
+\begin{figure}[H]
+    \centering
+    \begin{forest}
+        [Performance Requirements
+            [
+                [Space
+                    [
+                        Main storage 
+                    ]
+                    [
+                        Secondary storage 
+                    ] 
+                ] 
+                [Time
+                    [
+                        Response time 
+                    ]
+                    [
+                        Throughput 
+                        [
+                            Off peak throughput
+                        ]
+                        [
+                            Peak throughput
+                            [
+                                Peak mean throughput
+                            ]
+                            [
+                                Peak uniform throughput
+                            ]
+                        ]
+                    ] 
+                ] 
+            ]
+        ]
+    \end{forest}
+\end{figure}
+
+پارامتر‌هایی که در درخت تاکسونومی مشاهده می‌کنید در حقیقت تماماً به صورت
+نیازمندی‌های غیرعملیاتی هستند که در راس سازمان قرار دارند و به جزئیات دامنه‌ها
+کاری ندارد.
+
+به عنوان مثال میزان زمان پاسخ‌دهی یک قید برای شرکت کنندگان در یک میتینگ آنلاین
+می‌باشد. پارامترهایی مانند زمانبندی کردن و ارسال اعلانات می‌تواند از
+نیازمندی‌های غیرعملیاتی باشد که در این مورد استفاده می‌شوند.
+
+و پارامتر \lr{PeakMeanThroughput} مشخص می‌کند که چه تداد شرکت کنندگانی می‌توانند
+در یک جلسه آنلاین حضور داشته باشند.
+
+\subsubsection*{متامدل‌ها}
+
+متامدل‌ها در مورد نیازمندی‌های عملیاتی یا \lr{Functional} می‌باشد که در سطح
+سازمان عمل می‌کند. بیشتر در مورد جزئیات صحبت می‌کند به همین خاطر خیلی کم مورد
+استفاده قرار می‌گیرد زیرا حاوی سطح پیچیدگی بالا می‌باشد.
+
+\begin{itemize}
+    \item مفاهیم و روابطی که موارد \lr{RD} براساس آنها جمع‌آوری شده است.
+    \item دانشی که از سازمان و سیستم مورد هدف بدست می‌آوریم به عنوان نمونه‌ای از
+    المان‌های متا-مدل‌ها نسبت به سازمان و سیستم آینده‌ای می‌باشد که مدل شده است.
+    \item این به ما کمک می‌کند که بدانیم دقیقاً چه می‌خواهیم و چه سوالی نسبت به
+    مسئله داریم.
+    \item استخراج اطلاعات به وسیله پیمایش متا-مدل‌ها انجام می‌شود. 
+    \item اگر برای هر جز بخواهیم متا-مدل در نظر بگیریم بایستی برای آنها متا
+    کلاس‌ها را بنویسیم: \begin{itemize}
+        \item \lr{actors} $\leftarrow$ \lr{Actor}
+        \item \lr{tasks} $\leftarrow$ \lr{Task}
+        \item \lr{resources} $\leftarrow$ \lr{Resource}
+        \item \lr{dependencies} $\leftarrow$ \lr{Dependency}
+    \end{itemize}
+    \item یا برای مثال برای موارد زیر: \begin{itemize}
+        \item \lr{goal} $\leftarrow$ \lr{Goal}
+        \item \lr{objects} $\leftarrow$ \lr{Object}
+        \item \lr{agents} $\leftarrow$ \lr{Agent}
+        \item \lr{operations} $\leftarrow$ \lr{Operation}
+    \end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{images/meta-model_rd.png}
+    \caption{بازیابی دانش مستقل از دامنه، با استفاده از پارامتر‌های \lr{Objects,
+    Goal, Agents, Operation}}
+\end{figure}
+
+\subsubsection*{خاص دامنه یا \lr{Domain specific}}
+
+در حقیقت همانطور که از نامش پیداست تماماً و عمیقاً در مورد دامنه صحبت می‌کند تا
+بالاترین سطح سازمان.
+
+برای مثال وقتی سیستم مورد نظر نمایشگاه ماشین باشد دامنه‌های آن می‌تواند موارد زیر باشد:
+
+\begin{itemize}
+    \item مدیریت نمایشگاه ماشین
+    \item مدیریت تحویل و دریافت ماشین‌ها از کمپانی
+    \item مدیریت بخش تصادفات
+    \item مدیریت بخش بیمه ماشین
+\end{itemize}
+
+\subsubsection*{مثال}
+
+سیستم مورد هدف: مدیریت کتابخانه و دامنه: مدیریت منابع
+
+در این مثال منابع در حقیقت کتاب‌ها هستند.
+
+\begin{enumerate}
+    \item \lr{Concepts} یا مفاهیم: \begin{enumerate}
+        \item منابع (\lr{Resource})
+        \item \lr{Resource unit}
+        \item \lr{Repository}
+        \item \lr{Resource usage}
+        \item \lr{Resource availability}
+        \item \lr{Resource reservation}
+    \end{enumerate}
+    \item \lr{Tasks}: \begin{enumerate}
+        \item \lr{Tracking the history of resource usage (Like a ledger)}
+        \item \lr{Handling resource requests}
+    \end{enumerate}
+    \item \lr{Actors}: \begin{enumerate}
+        \item \lr{Resource users}
+        \item \lr{Resource manager}
+    \end{enumerate}
+    \item \lr{Objectives}: \begin{enumerate}
+        \item \lr{Ensuring wide accessibility of resource units to users}
+        \item \lr{Ensuring appropriate resource localization in the respoitory
+        for easy retrieval}
+    \end{enumerate}
+    \item \lr{Requirements} یا نیازمندی‌های این سیستم \begin{enumerate}
+        \item بررسی حد استفاده منابع به طور مناسب توسط کاربران
+        \item تعریف رنج و محدودیت: برای مثال کاربران بیشتر از ۵ کتاب را
+        نمی‌توانند از کتابخانه قرض بگیرند.
+    \end{enumerate}
+    \item \lr{Domain property} یا ویژگی دامنه: \begin{enumerate}
+        \item به دلیل آن که کتابخانه فیزیکی است ممکن است از یک کتاب فقط یک نسخه
+        موجود باشد، پس وقتی کاربری کتابی را قرض می‌گیرد کاربر دیگر نمی‌تواند
+        تقاضای مشابه داشته باشد (یک \lr{fact} می‌باشد).
+        \item وقتی کاربری خوش قول نباشد و کتابی به کتابخانه تحویل ندهد، امتیاز
+        منفی برای او ثبت می‌شود و از اون جریمه دریافت خواهد شد.
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection*{بخش‌هایی که خاص دامنه می‌باشد}
+
+\begin{itemize}
+    \item \lr{Resource} $\leftarrow$ \lr{Book}
+    \item \lr{Resource unit} $\leftarrow$ \lr{Book copy}
+    \item \lr{Repository} $\leftarrow$ \lr{Library shelves}
+    \item \lr{User} $\leftarrow$ \lr{Patron}
+    \item \lr{Manager} $\leftarrow$ \lr{Library staff}
+\end{itemize}
+
+\newpage
+
+\subsection{تکنیک‌های جمع‌آوری اطلاعات ذینفع‌گرا}
+
+بیشتر با انسان‌ها ارتباط دارد تا فرآورده‌هایی که در فرایند مهندسی ممکن است تولید
+شوند یا مورد استفاده قرار گیرند.
+
+\subsubsection{\lr{Interviews}}
+
+تمام سوالاتی که برای آن‌ها جوابی نداریم را در بخش \lr{Interview} می‌پرسیم. مثلا
+بعد از ثبت‌نام کاربر برای او اعلاناتی ارسال شود؟ یا مثلاً می‌گویم که در سناریو
+تغییر کلاس کاربر اعلانات ارسال شود.
+
+در حقیقت برای تمام سوالاتی جوابی نداریم آن‌ها را در بخش \lr{Interview} مطرح
+می‌کنیم. پرسش‌نامه به تنهایی کامل نیست، بلکه برای کامل شدنش نیاز به مصاحبه دارد.
+معمولاً بدیهیات در مصاحبه پرسیده نمی‌شود.
+
+\begin{enumerate}
+    \item ساخت‌یافته: براساس سوال است که پرسیده می‌شود.
+    \item بدون ساختار: گفت و گو آزاد و بدون هیچ پیش‌درآمدی می‌باشد.
+\end{enumerate}
+
+\subsubsection{\lr{Observation and ethnographic studies}}
+
+در مورد مشاهدات صحبت می‌کند که بیشتر سیستم حال حاضر یا \lr{System-as-is} را مورد
+بررسی قرار می‌دهد. هم \lr{Functional requirements} استخراج می‌شوند و هم
+\lr{Non-functional requirements}.
+
+این بخش می‌تواند به صورت غیرفعال مانند حالت ناظر باشد یا می‌تواند به صورت فعال
+به شکل درگیر شدن با فرآیند‌ها که با یادداشت برداری همراه است باشد.
+
+\subsubsection{\lr{Group sessions}}
+
+\begin{itemize}
+    \item ساختار یافته: به هر عضو تیم زمانی داده می‌شود. همه موارد به صورت مشخص
+    از پیش تعین شده است. کاملاً نقش هر فردی در تیم مشخص می‌باشد.
+    \item بدون ساختار: مانند لحظات طوفان فکری که می‌تواند به شکل نگارش صورت جلسه
+    به عنوان نتیجه همفکری‌ها باشد.
+    \item بدون سانسور شدن و تمسخر می‌باشد.
+\end{itemize}
