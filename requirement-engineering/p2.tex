@@ -1,0 +1,64 @@
+\documentclass[a4paper]{article}
+\usepackage{forest}
+\usepackage{float}
+\usepackage{pgf-pie}
+\usepackage{pgfplots} 
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{plantuml}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{color}
+\usepackage{xepersian}
+\usepackage{subfiles}
+\newgeometry{left=1.4cm, right=1.4cm, bottom=2.0cm, top=2.0cm}
+\settextfont[Scale=0.75]{XB Roya}
+\input{config}
+
+\title{مهندسی نیازمندی‌ها خانم دکتر سپیده آدابی}
+\author{علیرضا سلطانی نشان}
+
+\begin{document}
+\maketitle
+\section*{جملات \lr{Strong conflict} و \lr{Weak conflict} در مورد سیستم
+انتخاب واحد دانشجو}
+
+\subsection*{تضاد ضعیف}
+
+\begin{enumerate}
+    \item دانشجوی پسر در صورت معافیت تحصیلی تا زمان مقرر می‌تواند به تحصیل و
+    انتخاب واحد خود بپردازد.
+    \item شهریه درس می‌تواند تا پایان ترم جاری پرداخت شود.
+    \item انتخاب واحد در هر ترم در مقطع کارشناسی ارشد نهایتاً ۱۴ واحد می‌باشد.
+    \item شرایط پرداخت قسط (شهریه ثابت) تا نیمه دوم ترم جاری می‌باشد.
+\end{enumerate}
+
+\subsection*{تضاد قوی}
+
+\begin{enumerate}
+    \item در صورت عدم پرداخت شهریه ثابت، دانشجو مجاز به انتخاب واحد در ترم جاری
+    نیست.
+    \item دانشجو نمی‌تواند دو درسی که در یک ساعت و یک روز تشکیل می‌شود را به
+    صورت همزمان در یک ترم داشته باشد.
+    \item دانشجوی حذف ترم مجاز به انتخاب واحد نمی‌باشد.
+    \item دانشجوی مرخصی مجاز به انتخاب واحد نمی‌باشد.
+    \item امکان مشاهده کارنامه و برنامه امتحانی قبل از پرداخت شهریه درس وجود
+    ندارد.
+\end{enumerate}
+
+\subsection*{المان‌های دانشی}
+
+\begin{enumerate}
+    \item \lr{Actor}: دانشجو
+    \item \lr{Concept}: مدیریت دروس، اخذ واحد
+    \item \lr{Objective}: تحصیل در ترم جاری، انتخاب حداقل واحد، پرداخت شهریه
+    \item \lr{Task}: مدیریت پرداخت‌ها، مدیریت دروس انتخاب شده، هندل انتخاب واحد
+    \item \lr{Requirement}: دانشجو بتواند به میزان حداقل و حداکثر تعداد واحد،
+    درس اخذ کند.
+    \item \lr{Domain}: \lr{isBasePaymentSuccessful} $\leftarrow$
+    \lr{studentCanSelectUnit}
+\end{enumerate}
+
+
+\end{document}
