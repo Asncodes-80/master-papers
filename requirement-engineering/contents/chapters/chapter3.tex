@@ -969,6 +969,7 @@ session}.
     هدف را از بین ببرد.
     \item فرمول بدست آوردن آخرین سطر جدول: $Criticality(r) = Likelihood(r) * \sum_{obj}(Impact(r, obj) * weight(obj))$
     \item فرمول به دست آوردن آخرین ستون از جدول: $Loss(obj) = weight(obj) * \sum_{r}(Impact(r, obj) * Likelihood(r))$
+    \item نتیجه \lr{Risk criticality} دردسر کل ریسک را بر اهداف نشان می‌دهد.
 \end{itemize}
 
 \begin{LTR}
@@ -980,7 +981,7 @@ session}.
             \makecell{Comprehensive library \\ coverage weight: \lr{0.3}} & \lr{0} & \lr{0.20} & \lr{0.20} & \lr{0} & \lr{0.02} \\ \hline
             \makecell{Staff load reduced \\ weight: \lr{0.1}} & \lr{0.30} & \lr{0.50} & \lr{0.40} & \lr{0.10} & \lr{0.04} \\ \hline
             \makecell{Operational costs \\ decreased weight: \lr{0.2}} & \lr{0.10} & \lr{0.30} & \lr{0.30} & \lr{0.10} & \lr{0.05} \\ \hline
-            Risk criticality & \lr{0.12} & \lr{0.12} & \lr{0.04} & \lr{0.06} &  \\ \hline
+            Risk criticality & \lr{0.12} & \lr{0.12} & \lr{0.04} & \lr{0.06} &  \\
         \end{tabular}
         \caption{Impact matrix - example for library system}
         \label{fig:impactMatrix}
@@ -989,8 +990,8 @@ session}.
 
 \subsubsection{مرحله دوم \lr{DDP}}
 
-برای مرحله دوم نیازمند رسم جدول تاثیر-نتیجه (جدول شماره \ref{}) هستیم که هدف
-موارد زیر می‌باشد:
+برای مرحله دوم نیازمند رسم جدول تاثیر-نتیجه (جدول شماره
+\ref{fig:effectivenessMatrix}) هستیم که هدف موارد زیر می‌باشد:
 
 \begin{itemize}
     \item تخمین کاهش ریسک به وسیله راه‌حل جایگزین
@@ -1005,16 +1006,55 @@ session}.
 \end{itemize}
 
 \begin{itemize}
-    \item هر \lr{Countermeasure} مزایایی دارد اما ممکن است پیاده‌سازی آن شامل
-    هزینه‌هایی شود.
-    \item هزینه هر \lr{Countermeasure} توسط متخصص خبره آن دامنه تخمین زده
-    می‌شود.
     \item تلاقی سطر و ستون کاهش و حذف ریسک را نشان می‌دهد اگر راه‌حل اعمال شده
-    باشد.
+    باشد $Reduction(cm, r)$.
     \item اگر مقدار صفر باشد یعنی راه‌حل پیشنهادی هیچ تاثیر نداشته است.
     \item اگر مقدار ۱ باشد یعنی به طور کامل از وقوع ریسک پرهیز کرده است.
     \item فرمول بدست آوردن آخرین سطر جدول به ازای هر ریسک: $combinedReduction(r) = 1 - \prod_{cm}(1 - Reduction(cm, r))$
     \item فرمول بدست آوردن آخرین ستون جدول به ازای هر راه‌حل: $overallEffect(cm) = \sum_{r}(Reduction(cm, r) * Criticality(r))$
+    \item نتیجه \lr{Overall effect of countermeasure} مشخص می‌کند که این راه‌حل
+    چقدر خوب بوده است.
+    \item احتمال وقوع ریسک برایمان اهمیتی ندارد اما به هر دلیلی اینکه آن ریسک
+    چقدر برایمان دردسرساز بوده، خیلی اهمیت دارد.
+    \item در این مرحله به شما ثابت شد که بر خلاف روش \lr{RRL} یک راه‌حل می‌تواند
+    در کاهش چند ریسک تاثیرگذار باشد. پس این راه‌حل ارزمند است.
 \end{itemize}
 
+\begin{LTR}
+    \begin{table}[H]
+        \centering 
+        \begin{tabular}{ccccccc}
+            Countermeasure & \makecell{Late returns \\ weight: \lr{0.7}} & \makecell{Stolen copies \\ weight: \lr{0.3}} & \makecell{Lost copies \\ weight: \lr{0.1}} & \makecell{LongLoan by staff \\ weight: \lr{0.5}} & \makecell{Overall effect of \\ countermeasure} \\ \hline
+            \makecell{Email reminder sent} & \lr{0.70} & \lr{0} & \lr{0.10} & \lr{0.60} & \lr{0.12} \\ \hline
+            \makecell{Fine subtracted from \\ registration deposit} & \lr{0.80} & \lr{0} & \lr{0.60} & \lr{0} & \lr{0.12} \\ \hline
+            \makecell{Borrower unregistration \\ + insertion on black list} & \lr{0.90} & \lr{0.20} & \lr{0.80} & \lr{0} & \lr{0.16} \\ \hline
+            \makecell{Anti-theft device} & \lr{0} & \lr{1} & \lr{0} & \lr{0} & \lr{0.12} \\ \hline
+            \makecell{Combined risk \\ reduction} & \lr{0.99} & \lr{1} & \lr{0.93} & \lr{0.60} &  \\
+        \end{tabular}
+        \caption{Effectiveness matrix - example for library system}
+        \label{fig:effectivenessMatrix}
+    \end{table}
+\end{LTR}
+
 \subsubsection{مرحله سوم \lr{DDP}}
+
+در مرحله پایانی به تعیین تعادل بهینه بین عامل کاهش‌دهنده ریسک و هزینه راه‌حل‌ می‌پردازیم.
+
+\begin{itemize}
+    \item هر \lr{Countermeasure} مزایایی دارد اما ممکن است پیاده‌سازی آن شامل
+    هزینه‌هایی شود.
+    \item هزینه هر \lr{Countermeasure} توسط متخصص خبره آن دامنه تخمین زده
+    می‌شود.
+\end{itemize}
+
+روش \lr{DDP} را می‌توان بصری‌سازی نمود:
+
+\begin{itemize}
+    \item کشیدن چارت تعادل ریسک یا \lr{Risk balance charts}: باقی‌مانده تاثیر هر
+    ریسک بر روی تمام اهداف (\lr{Objectives}) اگر راه‌حلی \lr{cm} انتخاب شود.
+    \item ترکیب بهینه راه‌حل‌ها برای تعادل ریسک نسبت به قید و محدودیت‌های
+    هزینه‌ای که در نهایت باعث موارد زیر می‌شود: \begin{itemize} 
+        \item به حداکثر رساندن رضایت از اهداف تحت آستانه مشخصی از هزینه‌ها
+        \item به حداقل رساندن هزینه‌ها، بالاتر از آستانه‌ای مشخص از رضایت
+    \end{itemize}
+\end{itemize}
