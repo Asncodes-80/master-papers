@@ -974,7 +974,7 @@ session}.
 
 \begin{LTR}
     \begin{table}[H]
-        \centering 
+        \centering
         \begin{tabular}{ccccccc}
             Objectives & \makecell{Late returns \\ weight: \lr{0.7}} & \makecell{Stolen copies \\ weight: \lr{0.3}} & \makecell{Lost copies \\ weight: \lr{0.1}} & \makecell{LongLoan by staff \\ weight: \lr{0.5}} & Loss obj \\ \hline
             \makecell{Regular avialability of \\ book copies weight: \lr{0.4}} & \lr{0.30} & \lr{0.60} & \lr{0.60} & \lr{0.20} & \lr{0.22} \\ \hline
@@ -1022,7 +1022,7 @@ session}.
 
 \begin{LTR}
     \begin{table}[H]
-        \centering 
+        \centering
         \begin{tabular}{ccccccc}
             Countermeasure & \makecell{Late returns \\ weight: \lr{0.7}} & \makecell{Stolen copies \\ weight: \lr{0.3}} & \makecell{Lost copies \\ weight: \lr{0.1}} & \makecell{LongLoan by staff \\ weight: \lr{0.5}} & \makecell{Overall effect of \\ countermeasure} \\ \hline
             \makecell{Email reminder sent} & \lr{0.70} & \lr{0} & \lr{0.10} & \lr{0.60} & \lr{0.12} \\ \hline
@@ -1066,4 +1066,216 @@ session}.
 \begin{itemize}
     \item آپشن‌ها ثابت هستند.
     \item آیتم‌های \lr{NFR} و وزن آن‌ها می‌تواند به روز شود.
+    \item وزن‌ها ضریب اهمیت به \lr{NFR} هستند.
+\end{itemize}
+
+فرایند مهندسی نیازمندی چندین گزینه جایگزین را به نوع مختلفی معرفی می‌کند:
+
+\begin{itemize}
+    \item راه‌های جایگزین برای راضی نگه داشتن اهداف یک سیستم
+    \item جایگزین‌سازی مسئولیت‌ها در بین اجزای سیستم
+    \item جایگزین‌سازی برای رزولوشن یک تضاد
+    \item جایگزین‌سازی اقدمات و راه‌حل‌ها برای کاهش و کنترل  یک ریسک
+\end{itemize}
+
+نکته مهم: جایگزین (آلترناتیو) انتخابی بایستی به همراه مذاکره باشد:
+
+\begin{enumerate}
+    \item توافق بر معیار‌های ارزیابی از قبیل \lr{NFR}ها
+    \item مقایسه گزینه‌ها به نسبت معیار‌ها
+    \item انتخاب بهترین گزینه
+\end{enumerate}
+
+\subsubsection{استدلال‌های کیفی \lr{Qualitative reasoning}}
+
+هدف اصلی استدلال‌های کیفی تخمین کیفی مشارکت هر گزینه در مقام نیازمندی‌های
+\lr{NFR} می‌باشد:
+
+\begin{itemize}
+    \item \lr{Very positively (++)}
+    \item \lr{Positively (+)}
+    \item \lr{Negatively (-)}
+    \item \lr{Very negatively (--)}
+\end{itemize}
+
+برای مثال جهت ارزیابی بهتر زمان‌بندی و اطلاع یک جلسه به اعضای شرکت جدول بررسی
+کیفی زیر را خواهیم داشت:
+
+\begin{LTR}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{cccc}
+            Options & Fast response & \makecell{Reliable \\ response} & \makecell{Minimal \\ inconvenience} \\ \hline
+            Email reminder sent & $-$ & $+$ & $-$ \\ \hline
+            \makecell{Get constraints \\ from e-agenda} & $++$ & $--$ & $++$ \\ \hline
+        \end{tabular}
+        \caption{Qualitative reasoning for NFR}
+        \label{fig:qualitativeReasoningNFR}
+    \end{table}
+\end{LTR} \subsubsection{‌استدلال‌های کمی \lr{Quntitative reasoning}}
+
+بایستی جدولی (ماتریسی) وزن‌دار به عنوان استانداردی برای این تکنیک بسازیم که:
+
+\begin{itemize}
+    \item امتیاز (\lr{score}) هر گزینه (\lr{option}) معیاری جهت ارزیابی می‌باشد.
+    \item انتخاب گزینه‌ای (\lr{option}) که بالاترین امتیاز (\lr{score}) را میان
+    بقیه معیار‌ها دارد.
+    \item برای هر \lr{Option} خواهیم داشت: \lr{opt}
+    \item برای هر معیار \lr{Criterion} خواهیم داشت: \lr{crit}
+    \item $Score(opt, crit)$: تخمین درصد امتیاز یک گزینه نسبت به یک معیار
+    \begin{itemize}
+        \item ۰ تا ۱ خواهیم نوشت به گونه‌ای که می‌گوییم: معیار در \lr{x} درصد
+        مواقع راضی است.
+    \end{itemize}
+    \item آخرین خط ماتریس برای هر \lr{Option} مجموع امتیاز هر گزینه را نسبت به
+    معیار را بیان می‌کند
+    \item \lr{Total}: $totalScore(opt) = \sum_{crit}(Score(opt, crit) * Weight(crit))$
+\end{itemize}
+
+\begin{LTR}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{cccc}
+            Evaluation criteria & \makecell{Significance \\ weighting} & \makecell{Get constraints \\ by email} & \makecell{Get constraints \\ from e-agenda} \\ \hline
+            Fast response & $0.30$ & $0.50$ & $0.90$ \\ \hline
+            Reliable response & $0.60$ & $0.90$ & $0.30$ \\ \hline
+            Minimal inconvenience & $0.10$ & $0.50$ & $1.00$ \\ \hline
+            Total & $1.00$ & $0.74$ & $0.55$ \\
+        \end{tabular}
+        \caption{Option Score table (matrix)}
+        \label{fig:optionScore}
+    \end{table}
+\end{LTR}
+
+\subsection{اولویت‌بندی انتخاب‌ها}
+
+همیشه به یاد داشته باشید که اولویت‌بندی بعد از انتخاب راه‌حل‌ها مورد بررسی قرار
+می‌گیرد که در آن نیازمندی ثابت است و انتخاب در ورژن‌ها می‌تواند متغیر باشد. به
+جمع‌آوری و ارزیابی نیازمندی‌ها بایستی اولویت اختصاص داده شود:
+
+\begin{enumerate}
+    \item رزولوشن تضاد‌ها
+    \item محدودیت منابع مانند پول، پرسنل و زمان
+    \item توسعه افزایشی
+    \item برنامه‌ریزی مجدد در حالی که مسئله‌ای  پیشبینی نشده رخ داده است.
+\end{enumerate}
+
+در این بین اصولی وجود دارد که می‌تواند در اولویت‌بندی نیازمندی‌ها موثر باشد:
+
+\begin{enumerate}
+    \item سطوح اولویت‌بندی را مرتب کنیم و همیشه اعداد سطوح را کوچک نگه‌داریم.
+    \item سطوح مرتبط و کیفی (بیشتر از یه چیزی بودن یا به جای دیگری)
+    \item نیازمندی‌های قابل مقایسه
+    \item نیازمندی‌ها متقابلاً وابسته نیستند (یک مورد می‌تواند گرفته شود و توسط
+    سازمان پذیرفته شود و مورد دیگر می‌تواند \lr{Drop} شود).
+    \item اولویت‌ها توسط افراد اصلی سازمان پذیرفته شده باشند (به اولویت‌ها
+    اعتقاد داشته باشند).
+\end{enumerate}
+
+\subsubsection{اولویت‌بندی براساس ارزش-هزینه یا \lr{Value-cost}}
+
+سوال: یک شلوار خریدم یک میلیون تومان، گران است؟
+
+جواب: نسبت به چه چیزی؟
+
+در چنین مواقعی بایستی یک چیز را به یک یا چند چیز دیگر مقایسه کنیم (اشاره به
+مفهوم \lr{trade-off}) و سپس نسبت به آنها اقدام به انتخاب و اولویت‌بندی کنیم.
+برای اولویت‌بندی براساس ارزش-هزینه از روش \lr{AHP}\footnote{\lr{Analytic
+Hierarchy Process}} استفاده می‌شود. در این روش نسبت سبد را مشخص خواهیم نمود. این
+روش نموداری را ترسیم می‌کند که در محور \lr{x}ها درصد هزینه‌ای که شامل می‌شود و
+در محور \lr{y}ها درصد ارزشی که آن کار دارد را می‌نویسد.
+
+تکنیک \lr{AHP} دو معیار دارد که در نرم‌افزار آن را مورد سنجش خود قرار می‌دهد:
+
+\begin{enumerate}
+    \item هزینه‌ها (\lr{Costs}): همیشه دوست داریم هزینه‌ هر کاری پایین باشد و در
+    عین حال ارزشمند باشد.
+    \item ارزش‌ها (\lr{Values}): به معنای آن است که اگر این نیازمندی را محقق
+    کنیم چند درصد به پروژه رسیده‌ایم؟ آیا اهدافمان را طی کرده‌ایم؟
+\end{enumerate}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            xlabel={هزینه درصد},
+            ylabel={ارزش درصد},
+            xmin=0, xmax=50,
+            ymin=0, ymax=50,
+            % grid=major,
+            width=10cm, height=10cm,
+            scatter/classes={
+                a={mark=o,draw=blue},
+                b={mark=square*,draw=red}
+            }
+        ]
+        \addplot[
+            scatter, only marks,
+            scatter src=explicit symbolic,
+        ]
+        table[meta=label] {
+            x y label
+            5 48 POD
+            9 28 HPL
+            16 17 PCR
+            25 4 MLC
+            48 8 MA
+        };
+        % Slope 1: about high priority
+        \addplot[
+            domain=0:100,
+            samples=100,
+            color=red,
+            thick
+        ] {0.5 * x};
+
+        % Slope 2: about low priority
+        \addplot[
+            domain=0:100,
+            samples=101,
+            color=red,
+            thick
+        ] {2 * x};
+
+        % Note about slopes (High, Medium and Low) priorities
+        \node at (axis cs:6,40)[anchor=west]{بالا};
+        \node at (axis cs:30,35)[anchor=west]{میانی};
+        \node at (axis cs:31,15)[anchor=west]{پایین};
+
+        % Points label
+        \node at (axis cs:5,48)[anchor=west]{POD};
+        \node at (axis cs:9,28)[anchor=west]{HPL};
+        \node at (axis cs:16,17)[anchor=west]{PCR};
+        \node at (axis cs:25,4)[anchor=west]{MLC};
+        \node at (axis cs:43,8)[anchor=west]{MA};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{نمودار ارزش-هزینه بدست آمده از روش \lr{AHP}}
+    \label{fig:scatter}
+\end{figure}
+
+روش \lr{AHP} مقایسه دو به دو انجام می‌دهد و سپس همه موارد نسبت به نتیجه مقایسه
+دوتایی‌ها مورد بررسی و مقایسه مجدد قرار می‌گیرند. به عنوان مثال در ابتدا \lr{x}
+را نسبت به \lr{y} و \lr{z} مقایسه می‌کند. بعد از آن \lr{y} انتخاب می‌شود. سپس
+\lr{y} نسبت به \lr{xz} و \lr{ab} و دیگر موارد مورد بررسی قرار می‌گیرد.
+
+\subsubsection*{نکات}
+
+\begin{itemize}
+    \item به طور کلی \lr{AHP} تکنیکی برای اولویت‌بندی نیازمندی‌ها می‌باشد.
+    \item شیب‌ها مانند یک چاقو می‌ماند که نیازمندی و مدیر پروژه باید آن را مشخص
+    کند که چه بخشی چه درجه‌ای از اولویت را داراست.
+    \item برشی که برای اولویت‌ها زده می‌شود ورژنی را مشخص می‌کند که آن ارزش با
+    هزینه مناسب تهیه و پیاده‌سازی می‌شود.
+    \item هر چقدر موارد مورد نظر هزینه کمتر و ارزش بیشتری داشته باشند برایمان
+    اولویت بالاتری در نسخه کنونی سازمان خواهد داشت.
+    \item شیب خطوط (بالا، متوسط و پایین) با استفاده از سیستم‌های فازی حاصل
+    می‌شود که خروجی پارامتر‌های مدیریت پروژه این شیب خواهد بود.
+    \item اگر به عنوان مثال پول کافی برای انجام یک کار نداریم پس سعی کنیم ابتدا
+    یک کار کوچک‌تر و ارزشمند را انجام دهیم و به پایان برسانیم و سپس به دنبال هدف
+    بعدی بریم. برای مثال اگر یک نیروی کارآموز داریم اول باید به وی روند انجام
+    کار و پروژه را یاد دهیم تا صرفاً بیهوده هزینه ایجاد نکنیم که چند پروژه و
+    چندین تسک برای او تعریف کنیم که باعث شود کار‌ها نیمه تمام باقی بماند.
+    \item قضیه سیستم‌های فازی در \lr{Expert system} وجود دارد.
+    \item نقاط نمودار هزینه-ارزش را مهندس نیازمندی مشخص می‌کند.
 \end{itemize}
