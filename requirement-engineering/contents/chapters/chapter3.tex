@@ -1278,4 +1278,129 @@ Hierarchy Process}} استفاده می‌شود. در این روش نسبت س
     چندین تسک برای او تعریف کنیم که باعث شود کار‌ها نیمه تمام باقی بماند.
     \item قضیه سیستم‌های فازی در \lr{Expert system} وجود دارد.
     \item نقاط نمودار هزینه-ارزش را مهندس نیازمندی مشخص می‌کند.
+    \item این تکنیک یک تکنیک انسان محور می‌باشد.
+    \item نقطه‌ای که روی نمودار ایجاد می‌شود محصول یا خروجی روش \lr{AHP} بر روی
+    هزینه‌ها و ارزش‌هاست اشاره به شکل شماره \ref{fig:scatter}.
 \end{itemize}
+
+\subsubsection{قدم اول روش \lr{AHP} برای معیار ارزش‌ها}
+
+مقیاسی را مشخص کنید که در آن بتوانید نیازمندی‌ها و راه‌حل‌ها را با یکدیگر مقایسه
+کنید. در این مرحله از عدد گذاری فرد استفاده می‌کنیم و به هر عددی معیاری مشخص را
+اختصاص می‌دهیم تا بتوانیم اولویت خود را بیان کنیم.
+
+\begin{LTR}
+    \begin{itemize}
+        \item $1$: \lr{Contributes equally}
+        \item $3$: \lr{Contributes slightly more}
+        \item $5$: \lr{Contributes strongly more}
+        \item $7$: \lr{Contributes very strongly more}
+        \item $9$: \lr{Contributes extremely more}
+    \end{itemize}
+
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{cccccc}
+            Crit: value & \makecell{Produce \\ optimal date} & \makecell{Handle preferred \\ locations} & \makecell{Parameterize conflict \\ resolution strategy} & \makecell{Multi-lingual \\ communication} & \makecell{Metteing \\ assistant} \\ \hline
+            \makecell{Produce \\ optimal date} & $1$ & $3$ & $5$ & $9$ & $7$ \\ \hline
+            \makecell{Handle preferred \\ locations} & $1/3$ & $1$ & $3$ & $7$ & $7$  \\ \hline
+            \makecell{Parameterize conflict \\ resolution strategy} & $1/5$ & $1/3$ & $1$ & $5$ & $3$ \\ \hline
+            \makecell{Multi-lingual \\ communication} & $1/9$ & $1/7$ & $1/5$ & $1$ & $1/3$ \\ \hline
+            \makecell{Metteing \\ assistant} & $1/7$ & $1/7$ & $1/3$ & $3$ & $1$ \\
+        \end{tabular}
+        \caption{R-Matrix: AHP Comparison matrix with relative requirements on
+        the meeting scheduler}
+        \label{fig:ahpValueComparison}
+    \end{table}
+\end{LTR}
+
+\begin{itemize}
+    \item هر نیازمندی نسبت به خودش مقدار ۱ یعنی \lr{Contributes equally} را
+    می‌گیرد.
+    \item ماتریس جدول شماره \ref{fig:ahpValueComparison} نشان می‌دهد که: $R_{ji} = 1
+    / R_{ij}$ به شرطی که $(i >= 1)$ و $(j <= N)$
+    \item هر نیازمندی نسبت به ارزش‌ها می‌تواند معکوس باشد یعنی نسبت به قطر وارون
+    می‌شود (به نسبت فرمول بالا).
+\end{itemize}
+
+\subsubsection{قدم دوم روش \lr{AHP} برای معیار ارزش‌ها}
+
+در این فدم نحوه توزیع معیار بین نیازمندی‌ها را ارزیابی می‌کنیم. هر عنصر از
+ماتریس مقایسه با نتیجه تقسیم این عتصر بر مجموع عناصر ستون آن جایگزین می‌شود.
+
+\begin{LTR}
+    Criterion distribution = eigenvalues of comparison matrix
+\end{LTR}
+
+نوبت به نرمال‌سازی مقادیر ماتریس می‌رسد که بر اساس فرمول شماره
+\ref{equation:normalizedAhpValueFirst} عمل می‌کنیم:
+
+\begin{equation}
+    R'_{ij} = \frac{R_{ij}}{\sum_{i}R_{ij}} 
+    \label{equation:normalizedAhpValueFirst}
+\end{equation}
+
+\begin{LTR}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{ccccccc} Crit: value & \makecell{Produce \\ optim. date} & \makecell{Handle preferred \\ locations} & \makecell{Param. conflict \\ resolution strategy} & \makecell{Multi-lingual \\ communication} & \makecell{Metteing \\ assistant} & \makecell{Relative \\ value} \\ \hline
+            \makecell{Produce \\ optimal date} & $0.56$ & $0.65$ & $0.52$ & $0.36$ & $0.38$ & $0.49$ \\ \hline
+            \makecell{Handle preferred \\ locations} & $0.19$ & $0.22$ & $0.31$ & $0.28$ & $0.38$ & $0.28$ \\ \hline
+            \makecell{Parameterize conflict \\ resolution strategy} & $0.11$ & $0.07$ & $0.10$ & $0.20$ & $0.16$ & $0.13$ \\ \hline
+            \makecell{Multi-lingual \\ communication} & $0.06$ & $0.03$ & $0.02$ & $0.04$ & $0.02$ & $0.03$ \\ \hline
+            \makecell{Metteing \\ assistant} & $0.08$ & $0.03$ & $0.03$ & $0.12$ & $0.05$ & $0.07$ \\
+        \end{tabular}
+        \caption{R'-Matrix: AHP has rules for ensuring consistent estimates \&
+        ratios}
+        \label{fig:ahpValueStep2}
+    \end{table}
+\end{LTR}
+
+میانگین بین خطوط: مجموع عناصر در خط اول ماتریس نرمال شده تقسیم بر تعداد عناصر در
+طول خط فرمول شماره \ref{equation:normalizedAhpValueSecond}.
+
+\begin{equation}
+    Contrib(R_i, Crit) = \sum{j}R'_{ij}/N
+    \label{equation:normalizedAhpValueSecond}
+\end{equation}
+
+حال اگر دقت کرده باشید تمام ماتریس‌های \lr{R} و \lr{R'} بالا به نسبت معیار
+\lr{Value} یا همان ارزش‌ها بدست آمدند، الان نوبت آن است که این دو ماتریس را
+براساس معیار \lr{Cost} یا هزینه‌ها بدست آوریم.
+
+\subsubsection{قدم اول روش \lr{AHP} برای معیار هزینه‌ها}
+
+\begin{LTR}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{cccccc}
+            Crit: costs & \makecell{Produce \\ optimal date} & \makecell{Handle preferred \\ locations} & \makecell{Parameterize conflict \\ resolution strategy} & \makecell{Multi-lingual \\ communication} & \makecell{Metteing \\ assistant} \\ \hline
+            \makecell{Produce \\ optimal date} & $1$ & $1/3$ & $1/5$ & $1/5$ & $1/7$ \\ \hline
+            \makecell{Handle preferred \\ locations} & $3$ & $1$ & $1/5$ & $1/5$ & $1/7$  \\ \hline
+            \makecell{Parameterize conflict \\ resolution strategy} & $5$ & $5$ & $1$ & $1/3$ & $1/5$ \\ \hline
+            \makecell{Multi-lingual \\ communication} & $5$ & $5$ & $3$ & $1$ & $1/3$ \\ \hline
+            \makecell{Metteing \\ assistant} & $7$ & $7$ & $5$ & $3$ & $1$ \\
+        \end{tabular}
+        \caption{R-Matrix: AHP Comparison matrix with relative requirements on
+        the meeting scheduler}
+        \label{fig:ahpCostComparison}
+    \end{table}
+\end{LTR}
+
+\subsubsection{قدم دوم روش \lr{AHP} برای معیار هزینه‌ها}
+
+\begin{LTR}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{ccccccc} Crit: cost & \makecell{Produce \\ optim. date} & \makecell{Handle preferred \\ locations} & \makecell{Param. conflict \\ resolution strategy} & \makecell{Multi-lingual \\ communication} & \makecell{Metteing \\ assistant} & \makecell{Relative \\ value} \\ \hline
+            \makecell{Produce \\ optimal date} & $0.05$ & $0.02$ & $0.02$ & $0.04$ & $0.08$ & $0.04$ \\ \hline
+            \makecell{Handle preferred \\ locations} & $0.14$ & $0.05$ & $0.02$ & $0.04$ & $0.08$ & $0.07$ \\ \hline
+            \makecell{Parameterize conflict \\ resolution strategy} & $0.24$ & $0.27$ & $0.11$ & $0.07$ & $0.11$ & $0.16$ \\ \hline
+            \makecell{Multi-lingual \\ communication} & $0.24$ & $0.27$ & $0.32$ & $0.21$ & $0.18$ & $0.25$ \\ \hline
+            \makecell{Metteing \\ assistant} & $0.33$ & $0.38$ & $0.53$ & $0.63$ & $0.55$ & $0.48$ \\
+        \end{tabular}
+        \caption{R'-Matrix: AHP has rules for ensuring consistent estimates \&
+        ratios}
+        \label{fig:ahpCostStep2}
+    \end{table}
+\end{LTR}
