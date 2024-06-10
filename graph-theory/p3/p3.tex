@@ -1,0 +1,43 @@
+\documentclass[a4paper]{article}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{plantuml}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{color}
+\usepackage{xepersian}
+\usepackage{subfiles}
+\newgeometry{left=1.4cm, right=1.4cm, bottom=2.0cm, top=2.0cm}
+\settextfont[Scale=1]{XB Roya}
+
+\title{مطلوب است بدست آوردن شرایط زیر در گراف \lr{Q(n)}}
+\author{علیرضا سلطانی نشان}
+
+\begin{document}
+\maketitle
+
+\begin{LTR}
+    \begin{itemize}
+        \item Independent set
+        \item Matching
+        \item Vertex color, edge color
+    \end{itemize}
+\end{LTR}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c|c} 
+        شاخص & \lr{Min/Max} & \lr{Of What?} & شرط \\ \hline
+        $\alpha(G(n))$ & \lr{Max} & \lr{Vertces} & رئوس مجاور نباشد \\
+        $\alpha'(G(n))$ & \lr{Min} & \lr{Vertces} & پوشش از سمت هر لبه \\
+        $\beta(G(n))$ & \lr{Max} & \lr{Edges} & هر راس با حداقل یک لبه پوشانده شده باشد \\
+        $\beta'(G(n))$ & \lr{Min} & \lr{Vertces} & هیچ دو راسی نباید مجاور هم باشند \\
+    \end{tabular}
+    \caption{پاسخ}
+    \label{fig:ahpCostStep2}
+\end{table}
+
+
+\end{document}
