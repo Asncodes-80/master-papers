@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-06-18T05:21:24.404Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="pEZgp5Y-wPf5XhwtQAKq" version="24.5.4" type="device">
+<mxfile host="app.diagrams.net" modified="2024-06-18T06:58:02.234Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="QSBpLQyPxm7MLAntSdy7" version="24.5.5" type="google">
   <diagram name="Page-1" id="eq7RVDWb9r6U_N3fdWTc">
-    <mxGraphModel dx="224" dy="128" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -24,11 +24,11 @@
         <mxCell id="Z3xHRm1VUIv47qUXe7Of-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Z3xHRm1VUIv47qUXe7Of-19" target="Z3xHRm1VUIv47qUXe7Of-75">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Z3xHRm1VUIv47qUXe7Of-102" value="Install application" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="250" y="75" width="100" height="30" as="geometry" />
+        <mxCell id="Z3xHRm1VUIv47qUXe7Of-102" value="Proper car parking slot allocation" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="75" width="180" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z3xHRm1VUIv47qUXe7Of-103" value="Android app installer" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="250" y="170" width="120" height="30" as="geometry" />
+        <mxCell id="Z3xHRm1VUIv47qUXe7Of-103" value="systemSlotAllocationPerReserve()" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="170" width="190" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Z3xHRm1VUIv47qUXe7Of-104" value="G2" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
           <mxGeometry x="160" y="260" width="80" height="40" as="geometry" />
@@ -39,7 +39,7 @@
         <mxCell id="Z3xHRm1VUIv47qUXe7Of-105" value="" style="shape=or;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
           <mxGeometry x="196.25" y="230" width="7.5" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="Z3xHRm1VUIv47qUXe7Of-109" value="Successful Auth" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="Z3xHRm1VUIv47qUXe7Of-109" value="Weekly or instant car slot reserve" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="250" y="260" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Z3xHRm1VUIv47qUXe7Of-110" value="Agent 1" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
@@ -65,8 +65,8 @@
         <mxCell id="Z3xHRm1VUIv47qUXe7Of-114" value="Agent 2" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
           <mxGeometry x="162.5" y="350" width="75" height="50" as="geometry" />
         </mxCell>
-        <mxCell id="Z3xHRm1VUIv47qUXe7Of-115" value="User auth function&lt;br&gt;({personalCode: String, password: String})" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="250" y="360" width="230" height="30" as="geometry" />
+        <mxCell id="Z3xHRm1VUIv47qUXe7Of-115" value="reserve() method" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="360" width="110" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Z3xHRm1VUIv47qUXe7Of-116" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
           <mxGeometry x="181.25" y="390" width="5" height="10" as="geometry" />
@@ -129,7 +129,7 @@
         <mxCell id="Z3xHRm1VUIv47qUXe7Of-139" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.535;entryY=-0.037;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Z3xHRm1VUIv47qUXe7Of-137" target="Z3xHRm1VUIv47qUXe7Of-136">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Z3xHRm1VUIv47qUXe7Of-140" value="Weekly or instant car slot reserve" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="Z3xHRm1VUIv47qUXe7Of-140" value="Successful Auth" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="610" y="165" width="120" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Z3xHRm1VUIv47qUXe7Of-141" value="Agent 4" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
@@ -141,8 +141,8 @@
         <mxCell id="Z3xHRm1VUIv47qUXe7Of-143" value="" style="shape=or;whiteSpace=wrap;html=1;rotation=90;" vertex="1" parent="1">
           <mxGeometry x="561.25" y="220" width="7.5" height="10" as="geometry" />
         </mxCell>
-        <mxCell id="Z3xHRm1VUIv47qUXe7Of-146" value="reserve() method" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="610" y="260" width="120" height="30" as="geometry" />
+        <mxCell id="Z3xHRm1VUIv47qUXe7Of-146" value="User auth function&lt;br&gt;({personalCode: String, password: String})" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="610" y="260" width="240" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Z3xHRm1VUIv47qUXe7Of-148" value="G5" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
           <mxGeometry x="522.5" y="350" width="80" height="40" as="geometry" />
@@ -177,10 +177,10 @@
         <mxCell id="Z3xHRm1VUIv47qUXe7Of-162" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="Z3xHRm1VUIv47qUXe7Of-160" target="Z3xHRm1VUIv47qUXe7Of-153">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="Z3xHRm1VUIv47qUXe7Of-163" value="Proper car parking slot allocation" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="Z3xHRm1VUIv47qUXe7Of-163" value="Install application" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="610" y="350" width="120" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Z3xHRm1VUIv47qUXe7Of-164" value="systemSlotAllocationPerReserve()" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="Z3xHRm1VUIv47qUXe7Of-164" value="Android app installer" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="610" y="440" width="190" height="30" as="geometry" />
         </mxCell>
       </root>
