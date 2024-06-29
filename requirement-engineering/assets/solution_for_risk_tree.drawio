@@ -1,0 +1,58 @@
+<mxfile host="app.diagrams.net" modified="2024-06-29T06:28:38.694Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36" etag="TQ_72I5VeJhsCsrAw7jW" version="24.6.4" type="device">
+  <diagram name="Page-1" id="eKmYvczm5sZ4uzTXXk1F">
+    <mxGraphModel dx="1183" dy="663" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-1" value="Main Goal" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="380" y="90" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-2" value="Risk" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;flipV=1;" vertex="1" parent="1">
+          <mxGeometry x="370" y="190" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-23" value="Risk" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;flipV=1;" vertex="1" parent="1">
+          <mxGeometry x="305" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.504;entryY=-0.034;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=halfCircle;startFill=0;" edge="1" parent="1" source="Ka9au9_dpPtv9UXWhTp8-23" target="Ka9au9_dpPtv9UXWhTp8-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-25" value="Risk" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;flipV=1;" vertex="1" parent="1">
+          <mxGeometry x="460" y="300" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.592;entryY=-0.025;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=halfCircle;startFill=0;" edge="1" parent="1" source="Ka9au9_dpPtv9UXWhTp8-25" target="Ka9au9_dpPtv9UXWhTp8-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-31" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="520" y="360" width="20" height="39" as="geometry" />
+        </mxCell>
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-29" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.422;entryY=1.022;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="Ka9au9_dpPtv9UXWhTp8-31">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="10" y="39" as="sourcePoint" />
+            <mxPoint x="10" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-30" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="Ka9au9_dpPtv9UXWhTp8-31">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint y="23" as="sourcePoint" />
+            <mxPoint x="20" y="23" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-32" value="" style="group" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="421" y="174" width="20" as="geometry" />
+        </mxCell>
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-3" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.422;entryY=1.022;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="Ka9au9_dpPtv9UXWhTp8-32" source="Ka9au9_dpPtv9UXWhTp8-2" target="Ka9au9_dpPtv9UXWhTp8-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-22" value="" style="endArrow=none;html=1;rounded=0;strokeWidth=2;" edge="1" parent="Ka9au9_dpPtv9UXWhTp8-32">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="sourcePoint" />
+            <mxPoint x="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Ka9au9_dpPtv9UXWhTp8-33" value="Solution" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="399" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -20,6 +20,12 @@
 برای نمایش ریسک از شکل متوازی الضلاع برعکس استفاده می‌کنیم که نشان‌دهنده
 \lr{Not} هدف می‌باشد.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/goal_vs_risk.drawio.pdf}
+    \caption{تفاوت هدف و ریسک در نمودار ریسک}
+\end{figure}
+
 \subsection{اهدافی که باید ریسک آنها بدست آید}
 
 ۶ هدف وجود دارد که بایستی ریسکشان را بدست آوریم. چه خواسته مشتری باشد چه نباشد:
@@ -37,7 +43,19 @@
     \item \lr{Unusability}: نسبت به اهداف \lr{Usability} می‌باشد.
 \end{enumerate}
 
-% TODO: ایف‌ها رو از داخل کتاب تو فصل نهم بخون:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/risk_tree_or_and_re.drawio.pdf}
+    \caption{نمودار درخت ریسک}
+\end{figure}
+
+\subsection{مثال درخت ریسک تماس با آمبولانس در زمان تصادف}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{assets/ambulance_risk_diagram_example.drawio.pdf}
+    \caption{نمودار ریسک سناریو آمبولانس}
+\end{figure}
 
 \subsection*{نکات تکمیلی}
 
@@ -65,10 +83,12 @@
     \item راه‌حل‌ها بایستی از جنس قابلیت \footnote{\lr{Feature}} باشند.
 \end{itemize}
 
-% TODO: اون شکل وسطی که عکس گرفتی یعنی دومیه متوازی الاضلاعه میاد راه‌حل میگه
-% نسبت به ریسکی که رخ داده.
-
-% TODO: ساخت درخت ریسک
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{assets/solution_for_risk_tree.drawio.pdf}
+    \caption{نمودار درخت ریسک که یک راه‌حل را برای برطرف کردن ریسک مورد نظر
+    ارائه می‌دهد.}
+\end{figure}
 
 \subsection{تاتولوژی (\lr{Tautology})}
 
@@ -85,12 +105,73 @@
     \item ممکن است در همه جا کشش نداشته باشد.
 \end{itemize}
 
+\subsubsection{\lr{Tautology-based refinement}}
+
+الگو‌های تاتولوژی که می‌توانند در پیدا کردن ریسک‌ها موثر باشند:
+
+\begin{LTR}
+    \begin{itemize}
+        \item $NOT$(A AND B) amounts to $NOT$ A OR $NOT$ B
+        \item $NOT$(if A then B) amounts to $A$ AND $NOT$ B
+        \item $NOT$(A iff B) amounts to (A AND $NOT$ B) OR $(NOT$ A AND B)
+        \item $NOT$(A OR B) amounts $NOT$ A and $NOT$ B
+    \end{itemize}
+\end{LTR}
+
+\subsection{احتمال ریسک در اهداف \lr{Achieve}}
+
+\begin{LTR}
+    Achieve [targetCondition]: [if currentCondition then] sooner-or-later targetCondition
+\end{LTR}
+
+با $NOT$ کردن هدف ما میذتوانیم به ریشه ریسک برسیم:
+
+\begin{LTR}
+    [currentCondition and] always $NOT$ targetCondition
+\end{LTR}
+
+\subsection{ارتباط با قواعد ساختمان گسسته}
+
+در زیر می‌توانید حضور قاعده دمورگان را برای ریسک دو هدف مشاهده کنید:
+
+\begin{LTR}
+    NOT (G1 AND G2) $\rightarrow$ (is logically equivalent to) NOT G1 OR NOT G2
+\end{LTR}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{assets/de-morgan.drawio.pdf}
+    \caption{اعمال قاعده دمورگان در نمودار ریسک و هدف}
+\end{figure}
+
+\subsection{سناریو شرکت‌کنندگان جلسه آنلاین}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/online_attendance.drawio.pdf}
+    \caption{نمودار درخت ریسک به همراه اهداف}
+\end{figure}
+
 \subsection{شناخت شرایط لازم}
 
 اکثر اهداف درخت از نوع رفتاری \lr{Achieve} و \lr{Maintain} هستند.
 
-% if a then b
+\begin{LTR}
+    If a block signal is set to "stop" \textbf{then} any arriving train is
+    stopped at it.
+\end{LTR}
 
-% ریسک یعنی a هست و not b. یعنی بی و نتونستیم تجربه کنیم.
+در جمله بالا ریسک اصلی بعد از \textbf{\lr{then}} می‌تواند رخ دهد:
 
-% \subsection{الگو}
+\begin{LTR}
+    A block signal is set to "stop" \textbf{and} some arriving train is
+    \textbf{not} stopped at it.
+\end{LTR}
+
+\subsection{اهداف \lr{Achieve} و \lr{Maintain}}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{assets/achieve_maintain_goal.drawio.pdf}
+    \caption{تعریف ریسک در اهداف \lr{Maintain} و \lr{Achieve}}
+\end{figure}
