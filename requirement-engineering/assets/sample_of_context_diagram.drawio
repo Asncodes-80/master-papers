@@ -1,0 +1,83 @@
+<mxfile host="app.diagrams.net" modified="2024-06-29T20:10:35.083Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="AX3gmAdXO42v2bk_dFg-" version="24.6.4" type="device">
+  <diagram name="Page-1" id="Xwd-zq_E6OqTLHBitOwq">
+    <mxGraphModel dx="989" dy="558" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="BYOV7SndELZcuY-ym0iA-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="BYOV7SndELZcuY-ym0iA-1" target="BYOV7SndELZcuY-ym0iA-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="298" y="95" />
+              <mxPoint x="298" y="140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-1" value="Train actuator" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="70" width="125" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="BYOV7SndELZcuY-ym0iA-2" target="BYOV7SndELZcuY-ym0iA-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-2" value="Tracking system" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="235" y="160" width="125" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="BYOV7SndELZcuY-ym0iA-3" target="BYOV7SndELZcuY-ym0iA-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="550" y="95" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-3" value="Onboard controller" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="160" width="125" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="BYOV7SndELZcuY-ym0iA-4" target="BYOV7SndELZcuY-ym0iA-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="553" y="275" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-4" value="Train controller" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="360" y="250" width="125" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-6" value="Command.speed&lt;div&gt;Command.acceleration&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="570" y="250" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-8" value="Train.actuatedAcceleration" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="505" y="70" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-10" value="Train.currentSpeed&lt;div&gt;Train.currentLocation&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="200" y="50" width="140" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-11" value="train.measuredSpeed&lt;div&gt;train.measuredLocation&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="150" y="240" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-13" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="380" y="290" width="5" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-14" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="510" y="200" width="5" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-15" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="380" y="110" width="5" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-16" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="255" y="200" width="5" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-17" value="Monitor" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="395" y="210" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-18" value="Control" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="480" y="100" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-19" value="Monitor" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="300" y="100" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="BYOV7SndELZcuY-ym0iA-20" value="Control" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="542" y="133" width="60" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

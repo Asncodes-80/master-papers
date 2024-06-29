@@ -1,0 +1,137 @@
+<mxfile host="app.diagrams.net" modified="2024-06-29T20:09:05.260Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="vOoZV973ofBlWBvFM-wx" version="24.6.4" type="device">
+  <diagram name="Page-1" id="qKrglxnugpjsRMuVYIYJ">
+    <mxGraphModel dx="797" dy="449" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-1" value="Tracking system" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="120" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-2" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="160" width="5" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-3" value="Train controller" style="shape=hexagon;perimeter=hexagonPerimeter2;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="240" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-4" value="" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="390" y="280" width="5" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-5" value="Train" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="610" y="115" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-6" value="Command" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="280" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="VUfBtHEr-CvumV2_qb4A-7" target="VUfBtHEr-CvumV2_qb4A-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-7" value="Accurate estimate&lt;div&gt;of speed &amp;amp; position&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="160" y="125" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-35" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="VUfBtHEr-CvumV2_qb4A-37" target="VUfBtHEr-CvumV2_qb4A-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-9" value="Safe command&lt;div&gt;message&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="170" y="245" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="VUfBtHEr-CvumV2_qb4A-10" target="VUfBtHEr-CvumV2_qb4A-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="215" y="300" />
+              <mxPoint x="374" y="300" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-10" value="Command in time" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="150" y="315" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="VUfBtHEr-CvumV2_qb4A-11" target="VUfBtHEr-CvumV2_qb4A-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-11" value="send&lt;div&gt;command&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="388" y="350" width="75" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-12" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="500" y="129.88" as="sourcePoint" />
+            <mxPoint x="600" y="129.88" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-14" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="600" y="150" as="sourcePoint" />
+            <mxPoint x="500" y="150" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-15" value="currentSpeed&lt;div style=&quot;font-size: 10px;&quot;&gt;currentLocation&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="90" width="90" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-16" value="measuredSpeed&lt;div&gt;measuredLocation&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="500" y="150" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-17" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;Class with proper interface&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="610" y="85" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-18" value="" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="100" relative="1" as="geometry">
+            <mxPoint x="497" y="261" as="sourcePoint" />
+            <mxPoint x="583" y="311" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-19" value="" style="endArrow=classic;html=1;rounded=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="VUfBtHEr-CvumV2_qb4A-5" target="VUfBtHEr-CvumV2_qb4A-3">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="693" y="240" as="sourcePoint" />
+            <mxPoint x="607" y="190" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-22" value="commandedSpeed&lt;div&gt;commandedAccel&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="474" y="300" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-24" value="measureSpeed&lt;div&gt;measuredLocation&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="570" y="205" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-25" value="As monitor part" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#6666FF;" vertex="1" parent="1">
+          <mxGeometry x="610" y="188" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-26" value="As control part" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#6666FF;" vertex="1" parent="1">
+          <mxGeometry x="463" y="285" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-29" value="" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="421" y="315" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-30" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Performance&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="357" y="315" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-36" value=" " style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="310" y="295" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-38" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="1" source="VUfBtHEr-CvumV2_qb4A-9" target="VUfBtHEr-CvumV2_qb4A-37">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="280" y="265" as="sourcePoint" />
+            <mxPoint x="365" y="265" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-37" value=" " style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="320" y="260" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-39" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Responsibility&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="285" y="300" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-40" value="&lt;font style=&quot;font-size: 9px;&quot;&gt;Instance responsibility: A train controller at a station is responsible for for computing safe acceleration of all trains between this station and the next one&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;align=left;fillColor=#00FF80;" vertex="1" parent="1">
+          <mxGeometry x="150" y="190" width="325" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-41" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.635;entryY=-0.197;entryDx=0;entryDy=0;entryPerimeter=0;endArrow=none;endFill=0;dashed=1;" edge="1" parent="1" source="VUfBtHEr-CvumV2_qb4A-40" target="VUfBtHEr-CvumV2_qb4A-37">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-44" value=" " style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="328" y="140" width="10" height="10" as="geometry" />
+        </mxCell>
+        <mxCell id="VUfBtHEr-CvumV2_qb4A-45" value="Environment agent" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#6666FF;" vertex="1" parent="1">
+          <mxGeometry x="343" y="95" width="120" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
