@@ -1,0 +1,13 @@
+@startuml firstAggregation
+class University {}
+class Student {}
+class Professor {}
+class Staff {}
+class TeacherAssistant {}
+
+
+University o-- Student
+University o-- Professor 
+University o-- Staff 
+University o-- TeacherAssistant 
+@end

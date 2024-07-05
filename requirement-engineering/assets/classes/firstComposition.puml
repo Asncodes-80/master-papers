@@ -1,0 +1,36 @@
+@startuml firstComposition
+class Car { 
+    + id: string
+    + colorCode: string
+    + yearOfMake: Date
+    + esp: boolean
+    + type: string
+}
+
+class Gear {
+    + type: string
+}
+
+class Wheel { 
+    numberOfScrew: uint
+    type: string
+    model: string
+}
+
+class Door { 
+    + type: string
+    + orientation: string
+    + side: string
+    + knobType: string
+}
+
+class Glass {
+    + type: string
+    + model: string
+}
+
+Car *-left- Gear: "[1..1]"
+Car *-- Door: "2..4"
+Car *-- Wheel: "4..6"
+Car *-- Glass: "4..6"
+@end

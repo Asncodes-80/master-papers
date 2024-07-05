@@ -1,0 +1,15 @@
+@startuml secondAggrgation
+class Library { }
+class Directory { }
+class Shelves { }
+class AntiTheftSystem { } 
+class TheftSensor { }
+class TheftAlarm { }
+
+Library o-- "[1..1]" Directory
+Library o-- "1..*" Shelves
+Library o-- "[1..1]" AntiTheftSystem
+
+AntiTheftSystem o-- "0..*" TheftSensor
+AntiTheftSystem o-- "0..3" TheftAlarm
+@end

@@ -59,52 +59,29 @@
 
 در این نوع ارتباط، رابطه بین کلاس‌ها را از طریق فعل نمایش می‌دهیم.
 
-% @startuml trainBlock
-% class Train {
-%   + doorState
-%   + acceleration
-%   + speed
-% }
-
-% class Block { }
-
-% Train -- Block: "On"
-% @enduml
-
-% @startuml trainPlatform
-% class Train {
-%   + doorState
-%   + acceleration
-%   + speed
-% }
-
-% class Platform { }
-
-% Train -- Platform: "At"
-% @enduml
-
-% @startuml patronBookcopy
-% class Patron {
-%  + id: string
-%  + phone: string
-%  + fullname: string
-% }
-
-% class BookCopy {  }
-
-% Patron -- BookCopy: "Loan"
-% @enduml
-
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/association_diagram.png}
-    \caption{\lr{Entities, Associations, Attributes in UML}}
+    \includegraphics[width=0.5\textwidth]{assets/classes/trainBlock.eps}
+    \caption{دو موجودیت قطار و بلوک رابطه فعلی دارند.}
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/association_diagram_2.png}
-    \caption{\lr{Entities, Associations, Attributes more details in UML}}
+    \includegraphics[width=0.5\textwidth]{assets/classes/trainPlatform.eps}
+    \caption{دو موجودیت قطار و سکو رابطه فعل دارند. قطار روی سکو باشد.}
+\end{figure}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{assets/classes/patronbookcopy.eps}
+    \caption{رابطه قرض گیرنده کتاب با کتاب با فعل "قرض گرفتن" رابطه انجمنی
+    دارد.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{assets/classes/bookAuthor.eps}
+    \caption{رابطه نویسنده با کتاب در فعل "نوشتن" می‌باشد.}
 \end{figure}
 
 \subsubsection{\lr{Inheritance} یا وراثت}
@@ -117,6 +94,13 @@
 برای مثال، یک کتاب، یک محتوای آموزشی می‌باشد. همچنین یک فیلم نیز یک محتوای
 آموزشی. در این مثال محتوای آموزشی را به عنوان کلاس والد در نظر می‌گیریم که
 می‌تواند به شکل‌های مختلفی مانند فیلم یا کتاب نوشتاری ارائه شوند.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{assets/classes/secondInheritanceClass.eps}
+    \caption{کلاس انجمنی، ارثبری، تعدد}
+    \label{inheritanceWithMultiplicity}
+\end{figure}
 
 \subsubsection{\lr{Composition} یا ترکیب}
 
@@ -133,15 +117,28 @@
 قانونی نیست بلکه به صورت تصمیم می‌باشد. در حقیقت در این بخش می‌تواند از افراد
 خبره و متخصص این بخش استفاده کرد. حیات جز به حیات کل سیستم وابسته می‌باشد.
 
-\subsubsection{\lr{Aggrigation} یا تجمیع}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{assets/classes/firstComposition.eps}
+    \caption{رابطه ترکیبی کل به جز، حیات اجزا به والد خود وابسته است.}
+\end{figure}
+
+\subsubsection{\lr{Aggregation} یا تجمیع}
 
 این رابطه مشابه رابطه ترکیبی یا \lr{Composition} می‌باشد با این تفاوت که در
 تجمیع بیان می‌شود که اگر کل از بین برود، اجزا باز هم باقی می‌ماند.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{images/aggregation_relation.png}
-    \caption{\lr{Object aggregation: example}}
+    \includegraphics[width=0.7\textwidth]{assets/classes/firstAggregation.eps}
+    \caption{روابطی که نسبت به والد خود مستقل هستند و هر جزئی می‌تواند به تنهایی
+    عملیات خود را انجام دهد.}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{assets/classes/secondAggrgation.eps}
+    \caption{رابطه تجمیعی کلاس‌های مربوط به کتابخانه و سیستم ضد سرقت}
 \end{figure}
 
 \subsubsection{\lr{Multiplicity} یا تعدد}
@@ -149,7 +146,8 @@
 در این رابطه، هر نمونه‌ای از یک کلاس با تعدادی از نمونه‌های کلاس دیگر ارتباط
 دارند. رابطه خوبی با اصل منطق دارد و مواردی که در موجودیت‌ها قابل کنترل می‌باشد
 را بررسی می‌کند. برای مثال یک دانشجو می‌تواند یک تا ۳ کتاب را از کتابخانه قرض
-بگیرد.
+بگیرد. برای درک بهتر می‌توانید شکل \ref{inheritanceWithMultiplicity} را مشاهده
+کنید.
 
 \begin{LTR}
     \begin{itemize}
@@ -187,6 +185,12 @@ duration}) به مدت ۲ هفته می‌باشد. کلاس کتاب و کلا�
 
     \lr{Association(id, sid, bid, (access: type of "R|W"));}
 \end{LTR}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{assets/classes/associatedFileClass.eps}
+    \caption{کلاس انجمنی رابطه دانشجویان با فایل‌ها با دسترسی مناسب}
+\end{figure}
 
 \subsection{نکات پایانی}
 

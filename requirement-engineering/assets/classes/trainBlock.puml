@@ -1,0 +1,11 @@
+@startuml trainBlock
+class Train {
+  + doorState
+  + acceleration
+  + speed
+}
+
+class Block { }
+
+Train -right- Block: "On"
+@enduml

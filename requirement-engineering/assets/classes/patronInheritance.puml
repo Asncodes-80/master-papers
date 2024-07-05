@@ -1,0 +1,22 @@
+@startuml patronInheritClass
+class Patron {
+  + phone: string
+  + fullname: string
+  + naturalCode: string
+  + dateOfJoin: Date
+}
+
+class Student {
+  + studentId: string
+  + yearOfStudy: Date
+  + field: string
+}
+
+class Staff {
+  + staffId: string
+  + yearOfRecruit: Date
+}
+
+Student --|> Patron
+Staff --|> Patron
+@enduml

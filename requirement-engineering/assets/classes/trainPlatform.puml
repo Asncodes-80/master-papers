@@ -1,0 +1,11 @@
+@startuml trainPlatform
+class Train {
+  + doorState
+  + acceleration
+  + speed
+}
+
+class Platform { }
+
+Train -right- Platform: "At"
+@enduml

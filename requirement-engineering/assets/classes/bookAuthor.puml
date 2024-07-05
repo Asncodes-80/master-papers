@@ -1,0 +1,6 @@
+@startuml bookAuthor
+class Book {}
+class Author {}
+
+Author -right- Book: "Writing"
+@end

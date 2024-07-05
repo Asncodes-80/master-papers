@@ -1,0 +1,11 @@
+@startuml patronBookcopy
+class Patron {
+ + id: string
+ + phone: string
+ + fullname: string
+}
+
+class BookCopy {  }
+
+Patron -right- BookCopy: "Loan"
+@enduml

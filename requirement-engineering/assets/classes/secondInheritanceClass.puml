@@ -1,0 +1,62 @@
+@startuml secondInheritanceClass
+class Patron {
+    + phone: string
+    + fullname: string
+    + naturalCode: string
+    + dateOfJoin: Date
+}
+
+class Student {
+    + studentId: string
+    + yearOfStudy: Date
+    + field: string
+}
+
+class Staff {
+    + staffId: string
+    + yearOfRecruit: Date
+}
+
+class BorrowableItem {
+    + id: uint|string
+    + ISBM: string
+    + yearOfPublish: date
+    + cty: uint
+}
+
+class BookCopy {
+    + publisher: string
+}
+
+class JournalCopy {
+    + journalName: string
+    + country: string
+    + contributors: string[]
+}
+
+class ProceedingCopy {
+    + researcherAccount: string
+}
+
+class Book {
+    author: string
+}
+
+class Journal {
+    issue: any
+}
+
+class Conference {
+    series: string
+}
+
+Student --|> Patron
+Staff --|> Patron
+Patron "0..1" -right- "0..3" BorrowableItem: "Borrowing"
+BorrowableItem --|> BookCopy: "Copy of the Book"
+BorrowableItem --|> JournalCopy: "Published by"
+BorrowableItem --|> ProceedingCopy: "Procedding of"
+BookCopy -- Book
+JournalCopy -- Journal
+ProceedingCopy -- Conference
+@end

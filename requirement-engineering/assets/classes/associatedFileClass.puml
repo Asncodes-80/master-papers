@@ -1,0 +1,25 @@
+@startuml associatedFileClass
+
+class File { 
+    + {static} name: string
+    + size: ufloat
+    + createdAt: Date
+    + lastModified: Date
+}
+
+class Student { 
+    + sId: string
+    + fullname: string
+    + yearOfStudy: string
+}
+
+class Access {
+    + accId: uint
+    + sId: string
+    + fileName: string
+    + accessType: ["r" | "w" | "rw"]
+}
+
+File "0..*" ... Access
+Student "0..*" ... Access
+@end
