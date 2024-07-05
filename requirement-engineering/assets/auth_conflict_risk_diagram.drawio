@@ -1,0 +1,70 @@
+<mxfile host="app.diagrams.net" modified="2024-07-02T19:45:32.695Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="r_v03tsO3A3WQnzSzXQi" version="24.6.4" type="device">
+  <diagram name="Page-1" id="hIx8asLa7tjeHXQhI-T2">
+    <mxGraphModel dx="622" dy="419" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-1" value="User can Auth with username and password (if account exists)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="310" y="40" width="228" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Tud4Z7UnCpel7SXczQ-i-2" target="Tud4Z7UnCpel7SXczQ-i-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-2" value="User can&#39;t Auth with username and password" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;flipH=1;" vertex="1" parent="1">
+          <mxGeometry x="309" y="150" width="230" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Tud4Z7UnCpel7SXczQ-i-3" target="Tud4Z7UnCpel7SXczQ-i-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="545" y="235" />
+              <mxPoint x="450" y="235" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-3" value="User forgot her/his username" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;flipH=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="260" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Tud4Z7UnCpel7SXczQ-i-4" target="Tud4Z7UnCpel7SXczQ-i-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="305" y="235" />
+              <mxPoint x="410" y="235" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-4" value="User forgot her/his password" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;flipH=1;" vertex="1" parent="1">
+          <mxGeometry x="210" y="260" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Tud4Z7UnCpel7SXczQ-i-8" target="Tud4Z7UnCpel7SXczQ-i-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="Tud4Z7UnCpel7SXczQ-i-8" target="Tud4Z7UnCpel7SXczQ-i-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="680" y="400" />
+              <mxPoint x="680" y="70" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-8" value="User can use phone number to recover username (as solution)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;flipH=0;" vertex="1" parent="1">
+          <mxGeometry x="450" y="370" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="Tud4Z7UnCpel7SXczQ-i-9" target="Tud4Z7UnCpel7SXczQ-i-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-9" value="User can use &quot;forget password&quot;&amp;nbsp; option to recover account (as solution)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;flipH=0;" vertex="1" parent="1">
+          <mxGeometry x="210" y="370" width="190" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-13" value="" style="edgeStyle=isometricEdgeStyle;endArrow=none;html=1;rounded=0;strokeWidth=3;" edge="1" parent="1">
+          <mxGeometry width="50" height="100" relative="1" as="geometry">
+            <mxPoint x="679.8399999999999" y="240" as="sourcePoint" />
+            <mxPoint x="684.04" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="Tud4Z7UnCpel7SXczQ-i-14" value="Every body (non-user)&lt;div&gt;can auth&amp;nbsp;&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;with this system&lt;/span&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="640" y="210" width="160" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

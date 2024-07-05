@@ -92,6 +92,11 @@
 
 \subsection{تاتولوژی (\lr{Tautology})}
 
+تاتولوژی کلمه‌ای است که ریشه یونانی دارد. \lr{Tauto} به معنای «همان» و
+\lr{Logos} به معنای «گفتار» می‌باشد. در علم منطق به بیانی گفته می‌شود که در هر
+شرایطی به صورت خودکار درست می‌باشد، زیرا خود آن بیان، حقیقتی بدیهی را تکرار
+می‌کند.
+
 \begin{itemize}
     \item هر چیزی که از تاتولوژی نتیجه بگیرد، \lr{AND} یا \lr{OR} آن تو نقطه تو
     پر خواهد بود.
@@ -124,7 +129,7 @@
     Achieve [targetCondition]: [if currentCondition then] sooner-or-later targetCondition
 \end{LTR}
 
-با $NOT$ کردن هدف ما میذتوانیم به ریشه ریسک برسیم:
+با $NOT$ کردن هدف ما می‌توانیم به ریشه ریسک برسیم:
 
 \begin{LTR}
     [currentCondition and] always $NOT$ targetCondition
@@ -137,6 +142,21 @@
 \begin{LTR}
     NOT (G1 AND G2) $\rightarrow$ (is logically equivalent to) NOT G1 OR NOT G2
 \end{LTR}
+
+\subsection{\lr{Annotation}ها در ریسک}
+
+\begin{itemize}
+    \item \lr{Name}: نام ریسک
+    \item \lr{Def}: تعریف ریسک
+    \item \lr{Category}: جزء چه دسته‌بندی می‌باشد؟ (اشاره به ۶ هدف اجباری و
+    اهدافی که در سند نوشته شده است).
+    \item \lr{likelihood}: احتمال رخ دادن ریسک که می‌توان به صورت مقادیر عددی
+    (محدوده‌ای مشخص مانند ۰ تا ۱۰) و یا به صورت کیفی (\lr{Very likely},
+    \lr{Likely}, \lr{Possible}, \lr{Unlikely}).
+    \item \lr{Criticality}: بیشتر در مورد عواقب ریسک توضیح می‌دهد و می‌تواند به
+    دو صورت کیفی و کمی مقدارش را بیان کند (\lr{Catastrophic, Severe, Moderate,
+    Low})
+\end{itemize}
 
 \begin{figure}[H]
     \centering
@@ -174,4 +194,10 @@
     \centering
     \includegraphics[width=0.8\textwidth]{assets/achieve_maintain_goal.drawio.pdf}
     \caption{تعریف ریسک در اهداف \lr{Maintain} و \lr{Achieve}}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{assets/train_control_risk.drawio.pdf}
+    \caption{مثال ریسک در کنترل قطار به همراه راه‌کار و متاداده}
 \end{figure}

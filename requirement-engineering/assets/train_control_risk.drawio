@@ -1,0 +1,102 @@
+<mxfile host="app.diagrams.net" modified="2024-07-05T06:04:03.473Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36" etag="98tbFy5xHs6ulALozJWx" version="24.6.4" type="device">
+  <diagram name="Page-1" id="7AeiE9-TSKWkXkMo_auo">
+    <mxGraphModel dx="1080" dy="727" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="vTzASHiaUIzga4YFUmPn-1" value="Driver controls train" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="40" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vTzASHiaUIzga4YFUmPn-2" target="vTzASHiaUIzga4YFUmPn-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-2" value="Driver doesn&#39;t control train" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;flipH=1;" vertex="1" parent="1">
+          <mxGeometry x="325" y="150" width="170" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-5" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400.77000000000004" y="120" as="sourcePoint" />
+            <mxPoint x="419" y="120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vTzASHiaUIzga4YFUmPn-7" target="vTzASHiaUIzga4YFUmPn-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="265" y="240" />
+              <mxPoint x="380" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-7" value="Driver is sleeping" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;flipH=1;" vertex="1" parent="1">
+          <mxGeometry x="205" y="270" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="vTzASHiaUIzga4YFUmPn-8" target="vTzASHiaUIzga4YFUmPn-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-8" value="Train control system failed" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;flipH=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="270" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.75;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="vTzASHiaUIzga4YFUmPn-11" target="vTzASHiaUIzga4YFUmPn-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-11" value="The train has derailed" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;flipH=1;" vertex="1" parent="1">
+          <mxGeometry x="490" y="270" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-14" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;" edge="1" parent="1" source="vTzASHiaUIzga4YFUmPn-13" target="vTzASHiaUIzga4YFUmPn-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-13" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;name: Driver doesn&#39;t control train&lt;/font&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;def: Some situation&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;happened&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;for driver that he/she can&#39;t control train.&lt;/span&gt;&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Category: Hazard&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Likelihood: Likely&lt;/font&gt;&lt;/div&gt;&lt;div style=&quot;font-size: 10px;&quot;&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;Criticality: catastrophic&lt;/font&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;dashed=1;fillColor=#00FF80;align=left;" vertex="1" parent="1">
+          <mxGeometry x="550" y="130" width="190" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-15" value="Train Autopilot implementation" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="140" y="380" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-16" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;AI driven driver sleep&lt;/font&gt;&lt;div&gt;&lt;font style=&quot;font-size: 10px;&quot;&gt;&amp;nbsp;alarm to central&lt;/font&gt;&lt;/div&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="270" y="380" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.591;entryY=0.981;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="vTzASHiaUIzga4YFUmPn-15" target="vTzASHiaUIzga4YFUmPn-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.451;entryY=1.045;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="vTzASHiaUIzga4YFUmPn-16" target="vTzASHiaUIzga4YFUmPn-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-19" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="326.77000000000004" y="363" as="sourcePoint" />
+            <mxPoint x="345" y="363" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-20" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="244.77000000000004" y="347" as="sourcePoint" />
+            <mxPoint x="263" y="347" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-21" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Call to central control&lt;/span&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="353" y="450" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-23" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.443;entryY=0.961;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="vTzASHiaUIzga4YFUmPn-21" target="vTzASHiaUIzga4YFUmPn-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="vTzASHiaUIzga4YFUmPn-24" target="vTzASHiaUIzga4YFUmPn-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-24" value="&lt;span style=&quot;font-size: 10px;&quot;&gt;Call to urgent system to decrease degree of consequences&lt;/span&gt;" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;" vertex="1" parent="1">
+          <mxGeometry x="495" y="400" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-26" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="409.77000000000004" y="356" as="sourcePoint" />
+            <mxPoint x="428" y="356" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="vTzASHiaUIzga4YFUmPn-27" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="551.77" y="360" as="sourcePoint" />
+            <mxPoint x="570" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
