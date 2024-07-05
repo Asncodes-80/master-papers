@@ -10,7 +10,7 @@
 
 \begin{LTR}
     \begin{itemize}
-        \item \lr{Incapsulaction}
+        \item \lr{Encapsulaction}
         \item \lr{Methods (As class behaviors)}
         \item \lr{Abstraction}
     \end{itemize}
@@ -52,17 +52,53 @@
 
 در این نوع ارتباط، رابطه بین کلاس‌ها را از طریق فعل نمایش می‌دهیم.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/association_diagram.png}
-    \caption{\lr{Entities, Associations, Attributes in UML}}
-\end{figure}
+@startuml trainBlock
+class Train {
+  + doorState
+  + acceleration
+  + speed
+}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{images/association_diagram_2.png}
-    \caption{\lr{Entities, Associations, Attributes more details in UML}}
-\end{figure}
+class Block { }
+
+Train -- Block: "On"
+@enduml
+
+@startuml trainPlatform
+class Train {
+  + doorState
+  + acceleration
+  + speed
+}
+
+class Platform { }
+
+Train -- Platform: "At"
+@enduml
+
+@startuml patronBookcopy
+class Patron {
+ + id: string
+ + phone: string
+ + fullname: string
+}
+
+class BookCopy {  }
+
+Patron -- BookCopy: "Loan"
+@enduml
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{images/association_diagram.png}
+%     \caption{\lr{Entities, Associations, Attributes in UML}}
+% \end{figure}
+
+% \begin{figure}[H]
+%     \centering
+%     \includegraphics[width=0.7\textwidth]{images/association_diagram_2.png}
+%     \caption{\lr{Entities, Associations, Attributes more details in UML}}
+% \end{figure}
 
 \subsubsection{\lr{Inheritance} یا وراثت}
 
@@ -132,8 +168,8 @@ duration}) به مدت ۲ هفته می‌باشد. کلاس کتاب و کلا�
 
 در مثالی دیگر یک سیستم فایل اشتراکی داریم که دانشجویان مختلفی می‌توانند به آن
 دسترسی داشته باشند. سطح دسترسی را به عنوان صفت دانشجو در نظر نخواهیم گرفت بلکه
-به نیاز به تعریف یک کلاس انجمنی داریم تا بتوانیم مشخص کنیم که چه کاربری
-(دانشجویی) به چه فایلی (کلاس دیگر) چه دسترسی دارد.
+نیاز به تعریف یک کلاس انجمنی داریم تا بتوانیم مشخص کنیم که چه کاربری (دانشجویی)
+به چه فایلی (کلاس دیگر) چه دسترسی دارد.
 
 \begin{LTR}
     \lr{Ali(sid, Ali, other properties);}
