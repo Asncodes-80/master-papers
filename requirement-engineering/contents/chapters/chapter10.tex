@@ -2,6 +2,13 @@
 
 \section{فصل دهم}
 
+\subsection{موجودیت یا \lr{Entities}}
+
+هر چیزی که در فضای مسئله می‌خواهیم آن را بررسی کنیم را موجودیت می‌گویند. مانند
+قطار، دانشجو، کتاب، ماشین و غیره.
+
+\subsection{کلاس‌ها \lr{Classes}}
+
 یک عمل، توسط \lr{Agent} انجام می‌شود که در یک کلاس، تغییرات جدیدی را اعمال
 می‌کند و می‌تواند بر \lr{State}های آن کلاس تاثیر بگذارد. به همین خاطر از
 نمودار‌های کلاس \footnote{\lr{Class diagram}} استفاده می‌کنیم که به عنوان
@@ -52,53 +59,53 @@
 
 در این نوع ارتباط، رابطه بین کلاس‌ها را از طریق فعل نمایش می‌دهیم.
 
-@startuml trainBlock
-class Train {
-  + doorState
-  + acceleration
-  + speed
-}
+% @startuml trainBlock
+% class Train {
+%   + doorState
+%   + acceleration
+%   + speed
+% }
 
-class Block { }
+% class Block { }
 
-Train -- Block: "On"
-@enduml
+% Train -- Block: "On"
+% @enduml
 
-@startuml trainPlatform
-class Train {
-  + doorState
-  + acceleration
-  + speed
-}
+% @startuml trainPlatform
+% class Train {
+%   + doorState
+%   + acceleration
+%   + speed
+% }
 
-class Platform { }
+% class Platform { }
 
-Train -- Platform: "At"
-@enduml
+% Train -- Platform: "At"
+% @enduml
 
-@startuml patronBookcopy
-class Patron {
- + id: string
- + phone: string
- + fullname: string
-}
+% @startuml patronBookcopy
+% class Patron {
+%  + id: string
+%  + phone: string
+%  + fullname: string
+% }
 
-class BookCopy {  }
+% class BookCopy {  }
 
-Patron -- BookCopy: "Loan"
-@enduml
+% Patron -- BookCopy: "Loan"
+% @enduml
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.7\textwidth]{images/association_diagram.png}
-%     \caption{\lr{Entities, Associations, Attributes in UML}}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/association_diagram.png}
+    \caption{\lr{Entities, Associations, Attributes in UML}}
+\end{figure}
 
-% \begin{figure}[H]
-%     \centering
-%     \includegraphics[width=0.7\textwidth]{images/association_diagram_2.png}
-%     \caption{\lr{Entities, Associations, Attributes more details in UML}}
-% \end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{images/association_diagram_2.png}
+    \caption{\lr{Entities, Associations, Attributes more details in UML}}
+\end{figure}
 
 \subsubsection{\lr{Inheritance} یا وراثت}
 
@@ -140,7 +147,9 @@ Patron -- BookCopy: "Loan"
 \subsubsection{\lr{Multiplicity} یا تعدد}
 
 در این رابطه، هر نمونه‌ای از یک کلاس با تعدادی از نمونه‌های کلاس دیگر ارتباط
-دارند.
+دارند. رابطه خوبی با اصل منطق دارد و مواردی که در موجودیت‌ها قابل کنترل می‌باشد
+را بررسی می‌کند. برای مثال یک دانشجو می‌تواند یک تا ۳ کتاب را از کتابخانه قرض
+بگیرد.
 
 \begin{LTR}
     \begin{itemize}
