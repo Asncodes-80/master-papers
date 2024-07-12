@@ -1,0 +1,48 @@
+@startuml soilMonitoring
+class SmartSoilMonitoring {}
+
+class Devices {}
+
+class Controllers {}
+
+class Temperature {}
+
+class Humidity {}
+
+class PH {}
+
+class Camera {}
+
+class WateringSystem {}
+
+class SprayerSystem {}
+
+class PowerManagerSystem {}
+
+class ConditioningSystem {}
+
+class LightingSystem {}
+
+class LockingSystem {}
+
+class PhysicalAlarmSystem {}
+
+class SoftwareAlarmSystem {}
+
+SmartSoilMonitoring *-- Devices
+SmartSoilMonitoring *-- Controllers
+
+Devices <|-- Temperature
+Devices <|-- Humidity
+Devices <|-- PH
+Devices o-- Camera
+
+Controllers o-- WateringSystem
+Controllers o-- SprayerSystem 
+Controllers o-- PowerManagerSystem 
+Controllers o-- ConditioningSystem
+Controllers o-- LightingSystem 
+Controllers *-- LockingSystem
+Controllers *-- PhysicalAlarmSystem 
+Controllers *-- SoftwareAlarmSystem 
+@enduml
