@@ -1,6 +1,7 @@
 \documentclass[a4paper]{report}
 \usepackage{float}
 \usepackage{geometry}
+\usepackage{progressbar}
 \usepackage{hyperref}
 \usepackage{makecell}
 \usepackage{graphicx}
@@ -9,6 +10,7 @@
 \usepackage{subfiles}
 \usepackage{version}
 \newgeometry{left=1.4cm, right=1.4cm, bottom=2.0cm, top=2.0cm}
+\renewcommand{\baselinestretch}{1.5}
 \settextfont[Scale=1]{XB Roya}
 
 \input{version}
@@ -19,21 +21,31 @@
     \versionnumber
 }
 
-\author{
-    علیرضا سلطانی نشان \\
-    محدثه سالم \\
-    % مصطفی کاظمی \\
-    % سعید هاشمی \\
-    % کیانا ساسان نیا \\
-    % ناصر محمدی \\
-    % محمد خورشیدی روزبهانی \\
-    % شارا شاهوردیان \\
-    % مرصاد ایران‌نژاد \\
-    % علیرضا یوسفوند
-}
-
 \begin{document}
 \maketitle
+
+\section*{درصد مشارکت اعضای گروه}
+
+\begin{table}[h]
+    \label{fig:coworkers}
+    \centering
+        \begin{tabular}{c|c}
+            \textbf{نام دانشجو} & \textbf{درصد مشارکت} \\ \hline
+            علیرضا سلطانی نشان & \progressbar[width=10cm,heightr=1,filledcolor=yellow,emptycolor=gray!50]{1.00} 100 \\ \hline
+            محدثه سالم & \progressbar[width=10cm,heightr=1,filledcolor=yellow,emptycolor=gray!50]{1.00} 100 \\ \hline
+            محمد خورشیدی & \progressbar[width=10cm,heightr=1,filledcolor=yellow,emptycolor=gray!50]{0.50} 50 \\ \hline
+            مصطفی کاظمی & \progressbar[width=10cm,heightr=1,filledcolor=yellow,emptycolor=gray!50]{0.40} 40 \\ \hline
+            سعید هاشمی & \progressbar[width=10cm,heightr=1,filledcolor=yellow,emptycolor=gray!50]{0.30} 30 \\ \hline
+            کیانا ساسان نیا & \progressbar[width=10cm,heightr=1,filledcolor=yellow,emptycolor=gray!50]{0.20} 20 \\ \hline
+            ناصر محمدی & \progressbar[width=10cm,heightr=1,filledcolor=yellow,emptycolor=gray!50]{0.20} 20 \\ \hline
+            شارا شاهوردیان & \progressbar[width=10cm,heightr=1,filledcolor=yellow,emptycolor=gray!50]{0.10} 10 \\ \hline
+            مرصاد ایران‌نژاد & \progressbar[width=10cm,heightr=1,filledcolor=yellow,emptycolor=gray!50]{0.00} 0 \\ \hline
+            علیرضا یوسفوند & \progressbar[width=10cm,heightr=1,filledcolor=yellow,emptycolor=gray!50]{0.00} 0 \\
+        \end{tabular}
+    \caption{جدول درصد مشارکت اعضا}
+\end{table}
+
+\newpage
 
 \section*{سناریو}
 
