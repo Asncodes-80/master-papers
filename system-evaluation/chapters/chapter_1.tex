@@ -10,9 +10,9 @@
 
 \subsection{متریک‌ها یا معیار‌ها}
 
- معیار‌هایی برای بررسی و ارزیابی عملکرد وجود دارد که بایستی در هنگام آنالیز و
- بررسی سیستم نسبت به آنها تنظیم شود. دقیقاً معیار‌ها و شرایطی هستند که می‌خواهیم
- سیستم را بر مبنای آن اندازه‌گیری کنیم.
+معیار‌هایی برای بررسی و ارزیابی عملکرد وجود دارد که بایستی در هنگام آنالیز و
+بررسی سیستم نسبت به آنها تنظیم شود. دقیقاً معیار‌ها و شرایطی هستند که می‌خواهیم
+سیستم را بر مبنای آن اندازه‌گیری کنیم.
 
 \begin{enumerate}
     \item \lr{Response time}
@@ -149,14 +149,14 @@
     \begin{table}[H]
         \centering
         \label{fig:packetLostLinks}
-        \caption{مقایسه گم شدن بسته‌ها در لینک‌های \lr{A} و \lr{B}}
         \begin{tabular}{ccc}
             \textbf{File size} & \textbf{Link A} & \textbf{Link B} \\ \hline
             1000 & 5 & 10 \\
             1200 & 7 & 3 \\
             1300 & 3 & 0 \\
-            5 & 0 & 1 \\
+            5 & 0 & 1 \\ \hline
         \end{tabular}
+        \caption{مقایسه گم شدن بسته‌ها در لینک‌های \lr{A} و \lr{B}}
     \end{table}
 \end{LTR}
 
@@ -332,3 +332,184 @@
         \item پیدا کردن محدوده‌ای که بیشترین تاثیر را روی فاکتور‌ها دارد.
     \end{enumerate}
 \end{enumerate}
+
+\subsection{انتخاب تکنیک و متریک‌های ارزیابی}
+
+بررسی اینکه در چه لایف سایکل از سیستم هستیم؟ در چه مرحله‌ای از توسعه نرم‌افزار
+هستیم؟ اگر سیستم مورد نظر به طور کامل پیاده‌سازی شده باشد استفاده از ابزار‌های
+اندازه‌گیری انتخاب مناسبی هستند.
+
+\subsubsection{چه زمانی سریعاً به نتایج نیاز داریم؟}
+
+استفاده از \lr{Modeling} ریاضی برای تکنیک ارزیابی کارایی سیستم نسبت به شبیه‌سازی
+و اندازه‌گیری سریع‌تر می‌باشد.
+
+\subsubsection{چه ابزار‌ها و مهارت‌هایی موجود است؟}
+
+\begin{enumerate}
+    \item زبان برنامه‌نویسی که باید برای شبیه‌سازی برنامه مورد نظر یاد بگیریم.
+    کاملاً وابسته به زبان پیاده‌سازی هستیم.
+    \begin{enumerate}
+        \item استفاده از \lr{MatLab}
+        \item استفاده از \lr{Python}
+        \item استفاده از \lr{Opnet}
+    \end{enumerate}
+    \item ابزار‌هایی برای پشتیبانی از اندازه‌گیری مانند 
+    \begin{enumerate}
+        \item \lr{Packet sniffers}
+        \item \lr{Source codes}
+    \end{enumerate}
+    \item مهارت در بررسی مدل‌ها مانند تئوری صف (\lr{Queuing theory})
+    \begin{enumerate}
+        \item همه چیز به صورت دانشی است که به وسیله ریاضی آن را نمایش می‌دهیم.
+        \item \lr{Analytic modeling}
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{چه سطحی از دقت را برای ارزیابی باید در نظر گرفت؟}
+
+مدل‌سازی اصطلاحاً \lr{Course grade} یعنی جواب‌ها و خروجی‌هایی که دارد کاملاً به
+صورت جامع می‌باشد که نقطه مقابل آن اندازه‌گیری می‌باشد که با جزئیات نتایج را به
+صورت عمیق بررسی می‌کند.
+
+سطوح بیان جزئیات از سطح بالا به سمت عمیق:
+
+\begin{enumerate}
+    \item \lr{Math modeling}
+    \item \lr{Simulation}
+    \item \lr{Measurement}
+\end{enumerate}
+
+\subsubsection{چه جایگزین‌هایی وجود دارد؟}
+
+بحث دیگری که در بررسی و ارزیابی کارایی سیستم مورد استفاده قرار می‌گیرد استفاده
+از جایگزین‌ها می‌باشد. به معنای آن است که نتایج بدست آمده از فرایند ارزیابی را
+می‌خواهیم بار‌ها تکرار کنیم تا به یک سنجش و \lr{Trade off} بین انتخاب‌های موجود
+برسیم، نکته آن است که مدل‌سازی تکرار پذیری راحت‌تری دارد اما در مقابل
+اندازه‌گیری یا \lr{Measurement} تکرار در رسیدن به خروجی شامل هزینه بالا می‌باشد.
+یعنی اثر مستقیمی در بررسی هزینه‌ها دارد.
+
+\subsubsection{قابلیت فروش یا \lr{Saleability}}
+
+بین تمام صبحت‌هایی که انجام شد، وقتی می‌خواهیم یک فرایند ارزیابی را انجام دهیم،
+باید ببینیم کارفرما (مشتری نهایی) چه تکنیکی را برای محصول خودش می‌خواهد. حالت
+عمومی بین تمام این مشتری‌ها استفاده از تکنیک اندازه‌گیری یا \lr{Measurement}
+می‌باشد. اما در بحث‌های آکادمیک استفاده از مدلینگ ریاضیاتی و شبیه‌سازی استفاده
+بیشتری دارد.
+
+\subsubsection{آیا می‌توانیم از دو یا چند تکنیک به صورت همزمان استفاده کنیم؟}
+
+امکان‌پذیر می‌باشد اما بایستی نکات زیر را در نظر بگیریم:
+
+\begin{enumerate}
+    \item یک تکنیک، تکنیک دیگر را تایید کند.
+    \item اکثر مقالات با کیفیت، ارزیابی کارایی محصول یا کار مورد نظر خود را با
+    اندازه‌گیری و شبیه‌سازی انجام می‌دهند.
+\end{enumerate}
+
+ما بایستی نسبت به نیازمندی پروژه خود برنامه‌ریزی ارزیابی را مشخص کنیم که از چه
+تکنیک یا تکنیک‌هایی بایستی استفاده کنیم. شکل شماره
+\ref{fig:compareBetweenEvalTechniques}.
+
+\begin{table}[H]
+    \centering
+    \label{fig:compareBetweenEvalTechniques}
+    \begin{tabular}{c|ccc}
+        \textbf{معیار‌ها} & \textbf{مدل‌سازی} & \textbf{شبیه‌سازی} & \textbf{اندازه‌گیری} \\ \hline
+        \textbf{مراحل} & فرقی ندارد & فرقی ندارد & از مرحله پروتوتایپ \\
+        \textbf{زمان} & کم & متوسط & متفاوت و زیاد \\
+        \textbf{نوع ابزار} & تحلیل‌گرانه & دیداری و ترکیبی & ابزار‌های دقیق \\
+        \textbf{دقت} & کم & متوسط & متفاوت در عمل \\
+        \textbf{\lr{Trade-off}} & راحت & متوسط & سخت \\
+        \textbf{هزینه‌} & اندک & متوسط & زیاد \\
+        \textbf{قابلیت فروش} & اندک & متوسط & زیاد \\
+    \end{tabular}
+    \caption{مقایسه بین تکنیک‌های ارزیابی}
+\end{table}
+
+\subsection{چگونه متریک‌های ارزیابی کارایی را انتخاب کنیم؟}
+
+اندازه‌گیری متریک‌های یک سیستم جهت ارزیابی آن بایستی به صورت مشخص شده باشد در
+غیر این صورت از نظر هزینه زمانی و مالی بسیار طولانی خواهد شد. نکته: دلیل جداسازی
+و تشکیل خانواده بین متریک‌های ارزیابی سیستم این است که بتوانیم استاندارد‌های
+قابلیت اطمینان را جداگانه انجام دهیم یا به عبارتی دیگر استفاده از روتین‌های
+آزمایش متفاوت می‌باشد. هزینه‌ها، نگاه‌ها و روتین‌ها کاملاً متفاوت می‌باشد.
+
+متریک‌ها از سه خانواده هستند:
+
+\begin{enumerate}
+    \item \lr{Speed}
+    \begin{enumerate}
+        \item \lr{Time}
+        \item \lr{Rate}
+        \item \lr{Resource}
+    \end{enumerate}
+    \item \lr{Reliability}
+    \begin{enumerate}
+        \item \lr{Probability}
+        \item \lr{Time between}
+    \end{enumerate}
+    \item \lr{Availability}
+    \begin{enumerate}
+        \item \lr{Duration}
+        \item \lr{Time between}
+    \end{enumerate}
+\end{enumerate}
+
+\subsubsection{چگونه معیار‌ها را انتخاب کنیم؟ \lr{Best practice}}
+
+\begin{enumerate}
+    \item تغییر‌پذیری پایین به حدی که کمترین تکرار را داشته باشد. 
+    \item تا آنجایی که امکان دارد متریک‌های \lr{redundent} را حذف کنیم که
+    پیچیدگی ارزیابی را زیاد نکند.
+    \item متریکی انتخاب کنیم که جامع و کامل باشد تا ابعاد بزرگی از سیستم را پوشش
+    دهد.
+\end{enumerate}
+
+\subsubsection{متریک‌هایی که به صورت عمومی استفاده می‌شوند}
+
+\begin{itemize}
+    \item \lr{Response time}
+    \begin{itemize}
+        \item \lr{Turn around time}: زمان بین ارسال یک کار، تکمیل و رسیدن به
+        خروجی مورد نظر
+        \item \lr{Reaction time}: زمان بین ارسال یک درخواست و شروع اجرا‌ی آن
+        \item \lr{Stretch factor}: مدت زمانی که طول می‌کشد که سیستم پاسخ مورد
+        نظر را ارسال کند.
+        \begin{itemize}
+            \item بیشتر سیستم‌ها زمانی که بار کاری آن‌ها افزایش پیدا می‌کند زمان
+            پاسخ‌دهی آن‌ها نیز افزایش می‌یابد.
+        \end{itemize}
+    \end{itemize}
+    \item \lr{Throughput}
+    \begin{itemize}
+        \item \lr{Operations/seconds}
+        \begin{itemize}
+            \item \lr{Batch: Request Per Second}
+            \item \lr{Interactive: Job Per Second}
+            \item \lr{MIPS: Milions of Instructions Per Second}
+            \item \lr{MFLOPS: Milions of Floating-Point Ops Per Second}
+            \item \lr{Networks}: \lr{Packets Per Seconds} یا \lr{Bits Per Second}
+            \item \lr{Transactions Processing TPS: Transactions Per Second}
+        \end{itemize}
+        \item \lr{Capacity}
+        \item \lr{Efficiency}
+        \begin{itemize}
+            \item برای مثال بررسی بهینه بودن مصرف باطری در دو یا چند رویکرد مطرح
+            شده بر اساس ارسال اطلاعات در ثانیه.
+        \end{itemize}
+        \item \lr{Utilization}
+        \item دسته‌بندی‌های \lr{Utility}:
+        \begin{itemize}
+            \item \lr{HB: Higher is better} برای مثال \lr{Throughput}
+            \item \lr{LB: Lower is better} برای مثال مدت زمان پاسخ به درخواست‌ها
+            \item \lr{Nominal is best}: برای مثال \lr{Utilization}
+        \end{itemize}
+    \end{itemize}
+    \item \lr{Reliability}: اتکاپذیری و قابلیت اعتماد به سیستم زمانی که برنامه
+    نسبت به هر خطایی مقاوم است و هر خطایی باعث شنکنندگی برنامه نخواهد شد.
+    \begin{itemize}
+        \item \lr{Uptime}
+        \item \lr{MTTF}
+    \end{itemize}
+\end{itemize}
