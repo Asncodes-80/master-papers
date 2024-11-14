@@ -1,0 +1,149 @@
+\documentclass[a4paper]{article}
+\usepackage{forest}
+\usepackage{float}
+\usepackage{makecell}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{color}
+\usepackage{xepersian}
+\usepackage{subfiles}
+\settextfont[Scale=1]{XB Roya}
+
+% Code command color
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+\definecolor{commentColor}{rgb}{0.6,0.6,0.60}
+
+% Code style configuration
+\lstset{frame=tb,
+  language=python,
+  aboveskip=1mm,
+  lineskip=0.9mm,
+  belowskip=1mm,
+  showstringspaces=false,
+  showspaces=false,
+  columns=flexible,
+  basicstyle={\small\ttfamily},
+  numbers=none,
+  keywordstyle=\color{mauve},
+  commentstyle=\color{commentColor},
+  stringstyle=\color{dkgreen},
+  numberstyle=\small\color{black},
+  numbers=left,
+  stepnumber=1,
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+
+
+\title{جلوگیری از \lr{Exceptions} در برنامه‌های نرم‌افزاری}
+\author{علیرضا سلطانی نشان}
+
+\begin{document}
+\maketitle
+
+\section{چکیده}
+
+در این روش که یک نوع تاکتیک برای افزایش ویژگی کیفی \lr{Availability} مورد
+استفاده قرار می‌گیرد هدف آن است که نرم‌افزار نوشته شده عاری از هر گونه
+\lr{Fault} باشد که توسط توسعه دهنده‌ در هنگام توسعه مورد بررسی و آزمون
+نرم‌افزاری قرار نگرفته است. این کار باعث می‌شود که نرم‌افزار با کمترین مشکل به
+دست استفاده کننده برسد و در صورتی که \lr{Fault} در نرم‌افزار رخ داد،‌این
+\lr{Fault} باعث از بین رفتن چرخه عمر نرم‌افزار نشود و کاربر کمافی‌سابق بتواند از
+نرم‌افزار مورد نظرش استفاده کند و نیاز‌هایش را بر طرف سازد.
+
+ما به عنوان توسعه‌دهنده می‌توانیم با استفاده از استراتژی‌هایی از هر گونه
+\lr{Exception} در نرم‌افزار جلوگیری کنیم. این استراتژی‌ها عبارت‌اند از:
+
+\section{\lr{Smart Pointers}}
+
+در زبان \lr{C++} برای مدیریت حافظه به شکل هوشمند و خودکار طراحی شده‌اند نقش مهمی
+برای جلوگیری از نشتی حافظه \footnote{\lr{Memory Leak}} دارند. سه نوع رایج از
+\lr{Smart pointer}ها وجود دارد که هر کدام ویژگی منحصر به فرد خود را دارا هستند:
+
+\subsection{\texttt{\large std::unique\_ptr}}
+
+این نوع از پوینتر‌ها به شکل اختصاصی مالکیت یک منبع را بر عهده می‌گیرند و هیچ وقت
+اجازه نمی‌دهد که به صورت همزمان دو پوینتر متفاوت به یک منبع دسترسی داشته باشند
+که به \lr{Deadlock} برخورد کند.
+
+\begin{LTR}
+    \texttt{std::unique\_ptr<int> aPointer = std::make\_unique<int>(10);}
+\end{LTR}
+
+در این حالت \texttt{\large aPointer} تنها حافظه را در اختیار دارد و پس از
+اتمام استفاده از حافظه، حافظه را به صورت خودکار آزاد می‌کند.
+
+\subsection{\texttt{\large std::shared\_ptr}}
+
+از این پوینتر زمانی استفاده می‌کنیم که چند پوینتر می‌خواهند به یک منبع دسترسی
+داشته باشند. در این پوینتر شمارنده‌ای وجود دارد که تعداد پوینتر‌هایی که در حال
+استفاده از منبع هستند را نشان می‌دهد و به محض اینکه حافظه آزادسازی شود، منابع
+آزاد می‌شوند و شمارنده نیز به روز می‌شود.
+
+\begin{LTR}
+    \texttt{std::shared\_ptr ptrA = std::make\_shared<int>(20);}
+    \texttt{std::shared\_ptr ptrB = ptrA;}
+\end{LTR}
+
+در مثال بالا پوینتر \texttt{ptrB} به منبع‌ای اشاره دارد که \texttt{ptrA} از آن
+استفاده می‌کند.
+
+\subsection{\texttt{\large std::weak\_ptr}}
+
+نسخه ضعیف شده‌ای از پوینتر‌های \texttt{shared\_ptr} هستند که مانع بروز
+\lr{Circular refs} می‌شوند. اگرچه به منبع مورد استفاده اشاره می‌کند اما هیچ وقت
+مالک منبع نیست و در سمت شمارش منابع در پوینتر افزایش رخ نمی‌دهد.
+
+\begin{LTR}
+    \texttt{std::shared\_ptr<int> ptrA = std::make\_shared<int>(30);}    
+    \texttt{std::weak\_ptr<int> ptrC = ptrA}
+\end{LTR}
+
+به طور کلی استفاده از پوینتر‌ها باعث مدیریت حافظه می‌شوند که در نهایت از هر نشت
+حافظه جلوگیری به عمل می‌آورد. از طرفی دیگر کد را ایمن‌تر و مقاوم‌تر در برابر
+\lr{Fault}ها می‌کند. بیشتر از \lr{Smart pointer}ها برای مدیریت پویا و امن حافظه
+استفاده می‌شود.
+
+\section{\lr{Abstract data type ADT} یا نوع داده انتزاعی}
+
+یک نوع ساختار داده‌است که در آن تعریف می‌شود چه عملیاتی می‌توان روی داده‌ها
+انجام داد. برای توضیحی ساده‌تر رفتار کلاس‌ها را می‌توانیم به صورت چکیده و به دور
+از جزئیات در یک ساختار داده تعریف کنیم.
+
+مهم‌ترین مزیت استفاده از آن در جلوگیری از \lr{Exception}ها این است که به دلیل
+انتزاع بالا برنامه نویس نیازی به دانستن جزئیات پیاده‌سازی در برخی قسمت‌ها ندارد
+و آن را با تعریف در \lr{ADT} می‌تواند در قسمت‌های بعدی مدیریت کند و سپس وارد
+جزئیات شود. مزیت دیگر آن فهمیدن بهتر کد است که پیاده‌سازی رفتار کلاس‌ها را
+آسان‌تر می‌کند.
+
+\begin{LTR}
+    \begin{lstlisting}
+        class Value {
+            public int value;
+            public increase() int;
+            public decrease() int;
+            private initialized(v: int) void;
+        }
+      \end{lstlisting}
+\end{LTR}
+
+\section{\lr{Wrapper}ها}
+
+رپر‌ها نوعی ساختار یا کلاس هستند که به دور یک \lr{Api} یا ساختمان داده پیچیده‌تر
+قرار می‌گیرند و رابطی ساده‌تر و ایمن‌تر را تشکیل می‌دهند. رپر‌ها معمولاً برای
+ساده‌سازی و محافظت از منطق پیچیده‌ای استفاده می‌شوند که در داخل یک \lr{Api} یا
+کتابخانه‌ای وجود دارند.
+
+برای مثال در \lr{Api}هایی که سطح پایین هستند و منابع سیستمی به صورت دستی مدیریت
+می‌شوند می‌توان با استفاده از یک رپر این منابع را به صورت خودکار در اختیار گرفته
+و در پایان آزاد کند و از بروز استثنا و خطا‌های حافظه جلوگیری کند.
+
+% \bibliographystyle{unsrt-fa}
+% \bibliography{normalization_refs.bib}
+\end{document}

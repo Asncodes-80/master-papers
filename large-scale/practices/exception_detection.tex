@@ -1,0 +1,55 @@
+\documentclass[a4paper]{article}
+\usepackage{forest}
+\usepackage{float}
+\usepackage{makecell}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{color}
+\usepackage{xepersian}
+\usepackage{subfiles}
+\settextfont[Scale=1]{XB Roya}
+
+\title{شناسایی \lr{Fault}های نرم‌افزاری}
+\author{علیرضا سلطانی نشان}
+
+\begin{document}
+\maketitle
+
+\section{\lr{Parameter fence}}
+
+در حقیقت همانند \lr{Checksum} می‌ماند. که شامل گنجاندن یک الگوی مشخصی از داده از
+پیش تعریف در حافظه مانند \texttt{0xDEADBEEF} می‌باشد که بلافاصله پس از
+\lr{Variable-length parameters} یک شیء قرار می‌گیرد. این الگوی داده به عنوان یک
+\lr{sentinel} عمل می‌کند تا به هنگام دسترسی یا پردازش آن پارامتر‌های متغیر از
+بروز \lr{Buffer overflow} جلوگیری کند.
+
+\section{\lr{Parameter typing}}
+
+روشی است که در آن نوع پارامتر‌های ورودی توابع به صورت دقیق تعریف و کنترل می‌شود.
+این روش باعث می‌شود که تنها مقادیر سازگار با نوع مورد نظر بتواند به عنوان ورودی
+تابع یا \lr{Method} ارسال شود و هر بار که داده‌ای با نوع اشتباه وارد شود به خطای
+کامپایل یا \lr{Run-time} دچار می‌شود.
+
+استفاده از حافظه‌های پویا همانند زبان‌های \lr{Python} و \lr{Javascript} بسیار
+پیچیده و ناایمن هستند. چرا که شما در یک ورودی می‌توانید داده‌ای از نوع
+\texttt{str} را وارد کنید و در ورودی دیگر از همان تابع می‌توانید متغیری از نوع
+\texttt{int} وارد کنید. این گونه زبان‌ها اصطلاحاً \lr{Type-safe} نیستند.
+زبان‌هایی مانند \lr{C++}، \lr{Rust}، \lr{Dart} و مشابه آن‌ها در تعریف متغیر‌ها و
+نوع آن‌ها کاملاً سختگیرانه عمل می‌کنند.
+
+به طور کلی استفاده از نوع داده‌ای مشخص می‌تواند از \lr{TypeError} به عنوان یک
+\lr{Exception} در نرم‌افزار در حال اجرا به شکل ویژه‌ای جلوگیری کند.
+
+\section{\lr{Timeout}}
+
+همانطور که از نامش پیداست عموماً در سیستم‌ها یک مقدار مشخصی از زمان را تعیین
+می‌کنند که در آن محدود سیستم بایستی نهایتاً قادر به پاسخگویی باشد. در صورتی که
+سیستم نتواند در آن زمان به مولفه‌ای پاسخ دهد تا زمان مشخص شده صبر می‌کند و اگر
+تا انتهای آن مولفه پاسخی را دریافت نکرد سیستم \lr{Exception} مربوط به
+\lr{Timeout} را اعلام می‌کند. برای مثال سیستم‌های \lr{Modbus} مقدار زمان
+\lr{Timeout} آن‌ها ۱۰ ثانیه می‌باشد که پس از آن به ارور \lr{Timeout} برخورد
+می‌کند.
+\end{document}
