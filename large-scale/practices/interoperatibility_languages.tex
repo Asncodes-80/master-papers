@@ -116,6 +116,34 @@
 سرویس‌های امروزی، ما بدون اینکه بدانیم مدل تعامل \lr{Choreogprahy} چه چیزی
 می‌باشد به صورت غیرمتمرکز سرویس‌های خود را با یکدیگر هماهنگ‌سازی می‌کنیم.
 
+\section{\lr{Architecture Definition Languages}}
+
+\lr{ADL}ها نقش اساسی در طراحی و مشخص کردن رفتار سیستم‌های توزیع شده دارند، علل
+خصوص در مدل‌های \lr{Orchestration} و \lr{Choreography}:
+
+\subsection{زبان‌های \lr{Orchestration}}
+
+\begin{enumerate}
+    \item زبان \lr{WS-BPEL} یا \lr{Web Services Business Process Execution
+    Language}: یک زبان رسمی برای مشخص کردن المان‌ها و روابط آن‌ها در سرویس‌های
+    وب در مدل \lr{Orchestration} بکار می‌رود. در حین پیاده‌سازی ممکن است با
+    پیچیدگی‌هایی رو به رو شویم.
+    \item \lr{UML} یا \lr{Unified Modeling Language}: با استفاده از این زبان
+    می‌توان برای مدل‌های \lr{Orchestration} با استفاده از \lr{Activity diagram}
+    روابط بین المان‌ها را مشخص کرد.
+\end{enumerate}
+
+\subsection{زبان‌های \lr{Choreography}}
+
+\begin{enumerate}
+    \item \lr{WS-CDL} یا \lr{Web Services Choreography Description Language}: به
+    صورت مشخص روی تعریف مدل \lr{Choreography} وب سرویس‌ها مورد استفاده قرار
+    می‌گیرد.
+    \item \lr{Pi-Calculus}: از یک زبان ریاضی برای تعریف سیستم‌های موبایل و روابط
+    داخلی آن‌ها استفاده می‌کند. یک زبان رسمی برای استدلال در مورد سیستم‌های
+    همروند ارائه می‌دهد.
+\end{enumerate}
+
 \bibliographystyle{unsrt-fa}
 \bibliography{interoperatibility_refs.bib}
 \end{document}
