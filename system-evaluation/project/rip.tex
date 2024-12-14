@@ -1,0 +1,128 @@
+\documentclass[a4paper]{article}
+\usepackage{forest}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{ragged2e}
+\usepackage{color}
+% \usepackage{xepersian}
+\usepackage{subfiles}
+\newgeometry{left=1.4cm, right=1.4cm, bottom=2.0cm, top=2.0cm}
+% \settextfont[Scale=1]{XB Roya}
+\input{../config.tex}
+
+\title{RIP Project Report}
+\author{Alireza Soltani Neshan}
+
+\begin{document}
+\maketitle
+
+\section{Pre-requirements}
+
+\begin{itemize}
+    \item \texttt{PPP\_DS3} link has a data rate of 44.736 Mbps. All the routers
+    connected with this link.
+    \item RIP traffic is the total amount of RIP update traffic (in bits)
+    sent\/received per second by all the nodes using RIP as the routing protocol
+    in the IP interfaces in the node.
+    \item Update list of files and the model directories with \textbf{File},
+    \textbf{Manage Model Files} and \textbf{Refresh Model Directories}.
+\end{itemize}
+
+
+\subsection{Print out the layout of the network I implemented in this lab}
+
+\begin{lstlisting}
+# 
+# Purpose:   Contains IP address information for all active 
+#            interfaces in the current network model.
+#            (created by exporting this information from the model.)
+# 
+
+# Node Name: Campus Network.router_1
+#  Iface Name            IP Address       Subnet Mask      Connected Link
+#  ----------            ---------------  ---------------  ----------------
+   IF0                      192.0.0.1        255.255.255.0    Campus Network.net_10 <-> router_1
+   IF1                      192.0.1.1        255.255.255.0    Campus Network.net_11 <-> router_1
+   IF10                     192.0.2.1        255.255.255.0    Campus Network.router_2 <-> router_1
+   IF11                     192.0.3.1        255.255.255.0    Campus Network.router_1 <-> router_3
+
+
+# Node Name: Campus Network.net_10
+#  Iface Name            IP Address       Subnet Mask      Connected Link
+#  ----------            ---------------  ---------------  ----------------
+   IF0                      192.0.0.2        255.255.255.0    Campus Network.net_10 <-> router_1
+
+
+# Node Name: Campus Network.net_11
+#  Iface Name            IP Address       Subnet Mask      Connected Link
+#  ----------            ---------------  ---------------  ----------------
+   IF0                      192.0.1.2        255.255.255.0    Campus Network.net_11 <-> router_1
+
+
+# Node Name: Campus Network.router_2
+#  Iface Name            IP Address       Subnet Mask      Connected Link
+#  ----------            ---------------  ---------------  ----------------
+   IF0                      192.0.4.1        255.255.255.0    Campus Network.net_12 <-> router_2
+   IF1                      192.0.5.1        255.255.255.0    Campus Network.net_13 <-> router_2
+   IF10                     192.0.2.2        255.255.255.0    Campus Network.router_2 <-> router_1
+   IF11                     192.0.6.1        255.255.255.0    Campus Network.router_4 <-> router_2
+
+
+# Node Name: Campus Network.net_12
+#  Iface Name            IP Address       Subnet Mask      Connected Link
+#  ----------            ---------------  ---------------  ----------------
+   IF0                      192.0.4.2        255.255.255.0    Campus Network.net_12 <-> router_2
+
+
+# Node Name: Campus Network.net_13
+#  Iface Name            IP Address       Subnet Mask      Connected Link
+#  ----------            ---------------  ---------------  ----------------
+   IF0                      192.0.5.2        255.255.255.0    Campus Network.net_13 <-> router_2
+
+
+# Node Name: Campus Network.router_3
+#  Iface Name            IP Address       Subnet Mask      Connected Link
+#  ----------            ---------------  ---------------  ----------------
+   IF0                      192.0.7.1        255.255.255.0    Campus Network.net_14 <-> router_3
+   IF1                      192.0.8.1        255.255.255.0    Campus Network.net_15 <-> router_3
+   IF10                     192.0.3.2        255.255.255.0    Campus Network.router_1 <-> router_3
+   IF11                     192.0.9.1        255.255.255.0    Campus Network.router_3 <-> router_4
+
+
+# Node Name: Campus Network.net_14
+#  Iface Name            IP Address       Subnet Mask      Connected Link
+#  ----------            ---------------  ---------------  ----------------
+   IF0                      192.0.7.2        255.255.255.0    Campus Network.net_14 <-> router_3
+
+
+# Node Name: Campus Network.net_15
+#  Iface Name            IP Address       Subnet Mask      Connected Link
+#  ----------            ---------------  ---------------  ----------------
+   IF0                      192.0.8.2        255.255.255.0    Campus Network.net_15 <-> router_3
+
+
+# Node Name: Campus Network.router_4
+#  Iface Name            IP Address       Subnet Mask      Connected Link
+#  ----------            ---------------  ---------------  ----------------
+   IF0                      192.0.10.1       255.255.255.0    Campus Network.net_16 <-> router_4
+   IF1                      192.0.11.1       255.255.255.0    Campus Network.net_17 <-> router_4
+   IF10                     192.0.9.2        255.255.255.0    Campus Network.router_3 <-> router_4
+   IF11                     192.0.6.2        255.255.255.0    Campus Network.router_4 <-> router_2
+
+
+# Node Name: Campus Network.net_16
+#  Iface Name            IP Address       Subnet Mask      Connected Link
+#  ----------            ---------------  ---------------  ----------------
+   IF0                      192.0.10.2       255.255.255.0    Campus Network.net_16 <-> router_4
+
+
+# Node Name: Campus Network.net_17
+#  Iface Name            IP Address       Subnet Mask      Connected Link
+#  ----------            ---------------  ---------------  ----------------
+   IF0                      192.0.11.2       255.255.255.0    Campus Network.net_17 <-> router_4
+\end{lstlisting}
+
+\end{document}
